@@ -175,15 +175,12 @@ public final class ManipulacaoUtil {
 
 		try {
 
-			if (string != null) {
+			for (int indice = string.length() - 1; indice >= 0; --indice) {
 
-				for (int indice = string.length() - 1; indice >= 0; --indice) {
+				if (string.charAt(indice) != ' ') {
 
-					if (string.charAt(indice) != ' ') {
-
-						resultado = string.substring(0, indice + 1);
-						break;
-					}
+					resultado = string.substring(0, indice + 1);
+					break;
 				}
 			}
 
@@ -211,15 +208,12 @@ public final class ManipulacaoUtil {
 
 		try {
 
-			if (string != null) {
+			for (int indice = 0; indice < string.length(); indice++) {
 
-				for (int indice = 0; indice < string.length(); indice++) {
+				if (string.charAt(indice) != ' ') {
 
-					if (string.charAt(indice) != ' ') {
-
-						resultado = string.substring(indice, string.length());
-						break;
-					}
+					resultado = string.substring(indice, string.length());
+					break;
 				}
 			}
 
@@ -254,7 +248,7 @@ public final class ManipulacaoUtil {
 					caracterAdd.append(caracter);
 				}
 			} else {
-				return texto.substring(0, tamanhoMaximo);
+				return ConversaoUtil.nuloParaVazio(texto).substring(0, tamanhoMaximo);
 			}
 
 			if (noInicio) {
