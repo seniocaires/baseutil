@@ -77,7 +77,7 @@ public final class ComparacaoUtil {
 	 * @author Senio Caires
 	 */
 	public static boolean isPositivo(final Float valorFloat) {
-		return valorFloat != null && valorFloat > 0.0f;
+		return valorFloat != null && valorFloat > 0.0F;
 	}
 
 	/**
