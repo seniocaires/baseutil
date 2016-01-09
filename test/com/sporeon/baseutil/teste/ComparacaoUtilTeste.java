@@ -36,7 +36,7 @@ import com.sporeon.baseutil.ComparacaoUtil;
  * Classe de teste unitário para testar a classe {@link ComparacaoUtil}.
  * @author Senio Caires
  */
-public class ComparacaoUtilTeste {
+public final class ComparacaoUtilTeste {
 
 	/* ------------------------------
 	 * CONSTANTES
@@ -48,6 +48,48 @@ public class ComparacaoUtilTeste {
 	 * @author Senio Caires
 	 */
 	private static final Logger LOGGER = Logger.getLogger(ComparacaoUtilTeste.class);
+
+	/**
+	 * Número inteiro nulo.
+	 * @author Senio Caires
+	 */
+	private static final Integer INTEGER_NULO = null;
+
+	/**
+	 * Número long nulo.
+	 * @author Senio Caires
+	 */
+	private static final Long LONG_NULO = null;
+
+	/**
+	 * Número float nulo.
+	 * @author Senio Caires
+	 */
+	private static final Float FLOAT_NULO = null;
+
+	/**
+	 * Número double nulo.
+	 * @author Senio Caires
+	 */
+	private static final Double DOUBLE_NULO = null;
+
+	/**
+	 * Número BigDecimal nulo.
+	 * @author Senio Caires
+	 */
+	private static final BigDecimal BIGDECIMAL_NULO = null;
+
+	/**
+	 * String nula.
+	 * @author Senio Caires
+	 */
+	private static final String STRING_NULA = null;
+
+	/**
+	 * Character nulo.
+	 * @author Senio Caires
+	 */
+	private static final Character CHARACTER_NULO = null;
 
 	/* ------------------------------
 	 * CONTRUTORES
@@ -99,9 +141,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isPositivoInteger().");
 
-		final Integer integerNulo = null;
-
-		Assert.assertFalse(ComparacaoUtil.isPositivo(integerNulo));
+		Assert.assertFalse(ComparacaoUtil.isPositivo(INTEGER_NULO));
 
 		Assert.assertFalse(ComparacaoUtil.isPositivo(-1));
 
@@ -119,9 +159,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isPositivoLong().");
 
-		final Long longNulo = null;
-
-		Assert.assertFalse(ComparacaoUtil.isPositivo(longNulo));
+		Assert.assertFalse(ComparacaoUtil.isPositivo(LONG_NULO));
 
 		Assert.assertFalse(ComparacaoUtil.isPositivo(-1L));
 
@@ -139,9 +177,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isPositivoFloat().");
 
-		final Float floatNulo = null;
-
-		Assert.assertFalse(ComparacaoUtil.isPositivo(floatNulo));
+		Assert.assertFalse(ComparacaoUtil.isPositivo(FLOAT_NULO));
 
 		Assert.assertFalse(ComparacaoUtil.isPositivo(-1F));
 
@@ -159,9 +195,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isPositivoDouble().");
 
-		final Double doubleNulo = null;
-
-		Assert.assertFalse(ComparacaoUtil.isPositivo(doubleNulo));
+		Assert.assertFalse(ComparacaoUtil.isPositivo(DOUBLE_NULO));
 
 		Assert.assertFalse(ComparacaoUtil.isPositivo(-1D));
 
@@ -179,9 +213,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isPositivoBigDecimal().");
 
-		final BigDecimal bigDecimalNulo = null;
-
-		Assert.assertFalse(ComparacaoUtil.isPositivo(bigDecimalNulo));
+		Assert.assertFalse(ComparacaoUtil.isPositivo(BIGDECIMAL_NULO));
 
 		Assert.assertFalse(ComparacaoUtil.isPositivo(BigDecimal.valueOf(-1D)));
 
@@ -199,9 +231,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isVazioInteger().");
 
-		final Integer integerNulo = null;
-
-		Assert.assertTrue(ComparacaoUtil.isVazio(integerNulo));
+		Assert.assertTrue(ComparacaoUtil.isVazio(INTEGER_NULO));
 
 		Assert.assertTrue(ComparacaoUtil.isVazio(0));
 
@@ -223,9 +253,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isVazioLong().");
 
-		final Long longNulo = null;
-
-		Assert.assertTrue(ComparacaoUtil.isVazio(longNulo));
+		Assert.assertTrue(ComparacaoUtil.isVazio(LONG_NULO));
 
 		Assert.assertTrue(ComparacaoUtil.isVazio(0L));
 
@@ -247,9 +275,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isVazioDouble().");
 
-		final Double doubleNulo = null;
-
-		Assert.assertTrue(ComparacaoUtil.isVazio(doubleNulo));
+		Assert.assertTrue(ComparacaoUtil.isVazio(DOUBLE_NULO));
 
 		Assert.assertTrue(ComparacaoUtil.isVazio(0.0));
 
@@ -271,9 +297,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isVazioBigDecimal().");
 
-		final BigDecimal bigDecimalNulo = null;
-
-		Assert.assertTrue(ComparacaoUtil.isVazio(bigDecimalNulo));
+		Assert.assertTrue(ComparacaoUtil.isVazio(BIGDECIMAL_NULO));
 
 		Assert.assertTrue(ComparacaoUtil.isVazio(BigDecimal.ZERO));
 
@@ -295,9 +319,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isVazioString().");
 
-		final String stringNula = null;
-
-		Assert.assertTrue(ComparacaoUtil.isVazio(stringNula));
+		Assert.assertTrue(ComparacaoUtil.isVazio(STRING_NULA));
 
 		Assert.assertTrue(ComparacaoUtil.isVazio(""));
 
@@ -317,9 +339,7 @@ public class ComparacaoUtilTeste {
 
 		LOGGER.info("Testando isVazioCharacter().");
 
-		final Character characterNulo = null;
-
-		Assert.assertTrue(ComparacaoUtil.isVazio(characterNulo));
+		Assert.assertTrue(ComparacaoUtil.isVazio(CHARACTER_NULO));
 
 		Assert.assertTrue(ComparacaoUtil.isVazio(' '));
 

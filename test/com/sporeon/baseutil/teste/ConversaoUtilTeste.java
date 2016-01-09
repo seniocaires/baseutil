@@ -36,7 +36,7 @@ import com.sporeon.baseutil.ConversaoUtil;
  * Classe de teste unitário para testar a classe {@link ConversaoUtil}.
  * @author Senio Caires
  */
-public class ConversaoUtilTeste {
+public final class ConversaoUtilTeste {
 
 	/* ------------------------------
 	 * CONSTANTES
@@ -72,6 +72,54 @@ public class ConversaoUtilTeste {
 	 * @author Senio Caires
 	 */
 	private static final double DOUBLE_POSITIVO = 100D;
+
+	/**
+	 * Número inteiro nulo.
+	 * @author Senio Caires
+	 */
+	private static final Integer INTEGER_NULO = null;
+
+	/**
+	 * Número long nulo.
+	 * @author Senio Caires
+	 */
+	private static final Long LONG_NULO = null;
+
+	/**
+	 * Número float nulo.
+	 * @author Senio Caires
+	 */
+	private static final Float FLOAT_NULO = null;
+
+	/**
+	 * Número double nulo.
+	 * @author Senio Caires
+	 */
+	private static final Double DOUBLE_NULO = null;
+
+	/**
+	 * Número BigDecimal nulo.
+	 * @author Senio Caires
+	 */
+	private static final BigDecimal BIGDECIMAL_NULO = null;
+
+	/**
+	 * String nula.
+	 * @author Senio Caires
+	 */
+	private static final String STRING_NULA = null;
+
+	/**
+	 * Character nulo.
+	 * @author Senio Caires
+	 */
+	private static final Character CHARACTER_NULO = null;
+
+	/**
+	 * String não númerica.
+	 * @author Senio Caires
+	 */
+	private static final String STRING_NAO_NUMERICA = "a";
 
 	/* ------------------------------
 	 * CONTRUTORES
@@ -127,9 +175,7 @@ public class ConversaoUtilTeste {
 
 		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0));
 
-		final Integer testeNulo = null;
-
-		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(INTEGER_NULO));
 
 		Assert.assertEquals(Integer.valueOf(INT_POSITIVO), ConversaoUtil.naoPositivoParaNulo(INT_POSITIVO));
 	}
@@ -147,9 +193,7 @@ public class ConversaoUtilTeste {
 
 		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0L));
 
-		final Long testeNulo = null;
-
-		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(LONG_NULO));
 
 		Assert.assertEquals(Long.valueOf(LONG_POSITIVO), ConversaoUtil.naoPositivoParaNulo(LONG_POSITIVO));
 	}
@@ -167,9 +211,7 @@ public class ConversaoUtilTeste {
 
 		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0F));
 
-		final Float testeNulo = null;
-
-		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(FLOAT_NULO));
 
 		Assert.assertEquals(Float.valueOf(FLOAT_POSITIVO), ConversaoUtil.naoPositivoParaNulo(FLOAT_POSITIVO));
 	}
@@ -187,9 +229,7 @@ public class ConversaoUtilTeste {
 
 		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0D));
 
-		final Double testeNulo = null;
-
-		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(DOUBLE_NULO));
 
 		Assert.assertEquals(Double.valueOf(DOUBLE_POSITIVO), ConversaoUtil.naoPositivoParaNulo(DOUBLE_POSITIVO));
 	}
@@ -209,9 +249,7 @@ public class ConversaoUtilTeste {
 
 		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(BigDecimal.ZERO));
 
-		final BigDecimal testeNulo = null;
-
-		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(BIGDECIMAL_NULO));
 
 		Assert.assertEquals(numeroPositivo, ConversaoUtil.naoPositivoParaNulo(numeroPositivo));
 	}
@@ -257,9 +295,7 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando nuloParaZeroInteger().");
 
-		final Integer testeNulo = null;
-
-		Assert.assertEquals(Integer.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Integer.valueOf(0), ConversaoUtil.nuloParaZero(INTEGER_NULO));
 
 		Assert.assertEquals(Integer.valueOf(0), ConversaoUtil.nuloParaZero(0));
 
@@ -275,9 +311,7 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando nuloParaZeroLong().");
 
-		final Long testeNulo = null;
-
-		Assert.assertEquals(Long.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Long.valueOf(0), ConversaoUtil.nuloParaZero(LONG_NULO));
 
 		Assert.assertEquals(Long.valueOf(0), ConversaoUtil.nuloParaZero(0L));
 
@@ -293,9 +327,7 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando nuloParaZeroFloat().");
 
-		final Float testeNulo = null;
-
-		Assert.assertEquals(Float.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Float.valueOf(0), ConversaoUtil.nuloParaZero(FLOAT_NULO));
 
 		Assert.assertEquals(Float.valueOf(0), ConversaoUtil.nuloParaZero(0F));
 
@@ -311,9 +343,7 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando nuloParaZeroDouble().");
 
-		final Double testeNulo = null;
-
-		Assert.assertEquals(Double.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Double.valueOf(0), ConversaoUtil.nuloParaZero(DOUBLE_NULO));
 
 		Assert.assertEquals(Double.valueOf(0), ConversaoUtil.nuloParaZero(0D));
 
@@ -329,9 +359,7 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando nuloParaZeroBigDecimal().");
 
-		final BigDecimal testeNulo = null;
-
-		Assert.assertEquals(BigDecimal.ZERO, ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(BigDecimal.ZERO, ConversaoUtil.nuloParaZero(BIGDECIMAL_NULO));
 
 		Assert.assertEquals(BigDecimal.ZERO, ConversaoUtil.nuloParaZero(BigDecimal.ZERO));
 
@@ -347,15 +375,13 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando nuloParaVazioString().");
 
-		final String stringNula = null;
+		Assert.assertEquals("", ConversaoUtil.nuloParaVazio(STRING_NULA));
 
-		Assert.assertEquals("", ConversaoUtil.nuloParaVazio(stringNula));
+		Assert.assertFalse(" ".equals(ConversaoUtil.nuloParaVazio(STRING_NULA)));
 
-		Assert.assertFalse(" ".equals(ConversaoUtil.nuloParaVazio(stringNula)));
+		Assert.assertFalse("teste".equals(ConversaoUtil.nuloParaVazio(STRING_NULA)));
 
-		Assert.assertFalse("teste".equals(ConversaoUtil.nuloParaVazio(stringNula)));
-
-		Assert.assertFalse(ConversaoUtil.nuloParaVazio(stringNula) == null);
+		Assert.assertFalse(ConversaoUtil.nuloParaVazio(STRING_NULA) == null);
 
 		Assert.assertFalse("teste".equals(ConversaoUtil.nuloParaVazio("TESTE")));
 	}
@@ -369,11 +395,9 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando nuloParaVazioCharacter().");
 
-		final Character characterNulo = null;
+		Assert.assertTrue(ConversaoUtil.nuloParaVazio(CHARACTER_NULO) == ' ');
 
-		Assert.assertTrue(ConversaoUtil.nuloParaVazio(characterNulo) == ' ');
-
-		Assert.assertFalse(ConversaoUtil.nuloParaVazio(characterNulo) == null);
+		Assert.assertFalse(ConversaoUtil.nuloParaVazio(CHARACTER_NULO) == null);
 
 		Assert.assertFalse(ConversaoUtil.nuloParaVazio('T') == null);
 	}
@@ -387,12 +411,9 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando stringParaBigDecimal(String).");
 
-		final String stringNula = null;
-		final String stringNaoNumerica = "a";
+		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(STRING_NULA)));
 
-		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNula)));
-
-		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNaoNumerica)));
+		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(STRING_NAO_NUMERICA)));
 	}
 
 	/**
@@ -404,12 +425,9 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando stringParaInteger(String).");
 
-		final String stringNula = null;
-		final String stringNaoNumerica = "a";
+		Assert.assertTrue(ConversaoUtil.stringParaInteger(STRING_NULA) == 0);
 
-		Assert.assertTrue(ConversaoUtil.stringParaInteger(stringNula) == 0);
-
-		Assert.assertTrue(ConversaoUtil.stringParaInteger(stringNaoNumerica) == 0);
+		Assert.assertTrue(ConversaoUtil.stringParaInteger(STRING_NAO_NUMERICA) == 0);
 	}
 
 	/* ------------------------------

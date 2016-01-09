@@ -34,7 +34,7 @@ import com.sporeon.baseutil.ManipulacaoUtil;
  * Classe de teste unitário para testar a classe {@link ManipulacaoUtil}.
  * @author Senio Caires
  */
-public class ManipulacaoUtilTeste {
+public final class ManipulacaoUtilTeste {
 
 	/* ------------------------------
 	 * CONSTANTES
