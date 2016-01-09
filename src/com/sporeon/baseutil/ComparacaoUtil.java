@@ -139,7 +139,7 @@ public final class ComparacaoUtil {
 	 * @author Senio Caires
 	 */
 	public static boolean isVazio(final Double valorDouble) {
-		return valorDouble == null || valorDouble == 0.0;
+		return valorDouble == null || Double.doubleToRawLongBits(valorDouble) == 0.0;
 	}
 
 	/**

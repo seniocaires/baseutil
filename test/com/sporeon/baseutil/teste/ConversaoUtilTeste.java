@@ -354,6 +354,40 @@ public class ConversaoUtilTeste {
 		assertFalse(ConversaoUtil.nuloParaVazio('T') == null);
 	}
 
+	/**
+	 * Testa o método {@link ConversaoUtil#stringParaBigDecimal(String)}.
+	 * @author Senio Caires
+	 */
+	@Test
+	public final void stringParaBigDecimal() {
+
+		logger.info("Testando stringParaBigDecimal(String).");
+
+		String stringNula = null;
+		String stringNaoNumerica = "a";
+
+		assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNula)));
+
+		assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNaoNumerica)));
+	}
+
+	/**
+	 * Testa o método {@link ConversaoUtil#stringParaInteger(String)}.
+	 * @author Senio Caires
+	 */
+	@Test
+	public final void stringParaInteger() {
+
+		logger.info("Testando stringParaInteger(String).");
+
+		String stringNula = null;
+		String stringNaoNumerica = "a";
+
+		assertTrue(ConversaoUtil.stringParaInteger(stringNula) == 0);
+
+		assertTrue(ConversaoUtil.stringParaInteger(stringNaoNumerica) == 0);
+	}
+
 	/* ------------------------------
 	 * DEPOIS
 	 * ------------------------------

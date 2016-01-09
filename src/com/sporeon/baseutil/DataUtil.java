@@ -29,11 +29,24 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 /**
  * Classe base para utilitários de datas.
  * @author Senio Caires
  */
 public final class DataUtil {
+
+	/* ------------------------------
+	 * CONSTANTES
+	 * ------------------------------
+	 */
+
+	/**
+	 * Logger.
+	 * @author Senio Caires
+	 */
+	private static Logger logger = Logger.getLogger(DataUtil.class);
 
 	/* ------------------------------
 	 * CONTRUTORES
@@ -69,8 +82,8 @@ public final class DataUtil {
 
 		try {
 			resultado = dataEntrada.parse(data);
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParseException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;
@@ -92,8 +105,8 @@ public final class DataUtil {
 
 		try {
 			resultado = dataSaida.parse(dataSaida.format(dataEntrada.parse(data)));
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParseException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;
@@ -116,8 +129,8 @@ public final class DataUtil {
 
 		try {
 			resultado = dataSaida.parse(dataSaida.format(dataEntrada.parse(data)));
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParseException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;
@@ -135,12 +148,8 @@ public final class DataUtil {
 
 		DateFormat dataSaida = new SimpleDateFormat("dd/MM/yyyy");
 
-		try {
-			if (data != null) {
-				resultado = dataSaida.format(data);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (data != null) {
+			resultado = dataSaida.format(data);
 		}
 
 		return resultado;
@@ -182,15 +191,9 @@ public final class DataUtil {
 			return resultado;
 		}
 
-		DateFormat dataSaida = new SimpleDateFormat(formatoDeSaida);
+		DateFormat dataSaida = new SimpleDateFormat(ConversaoUtil.nuloParaVazio(formatoDeSaida));
 
-		try {
-
-			resultado = dataSaida.format(data);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		resultado = dataSaida.format(data);
 
 		return resultado;
 	}
@@ -207,14 +210,8 @@ public final class DataUtil {
 
 		DateFormat formatoSaida = new SimpleDateFormat("dd/MM/yyyy à's' HH:mm");
 
-		try {
-
-			if (data != null) {
-				resultado.append(formatoSaida.format(data));
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (data != null) {
+			resultado.append(formatoSaida.format(data));
 		}
 
 		return resultado.toString();
@@ -243,8 +240,8 @@ public final class DataUtil {
 			Date dataValida = dataEntrada.parse(data);
 			resultado = dataSaida.format(dataValida);
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParseException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;
@@ -269,8 +266,8 @@ public final class DataUtil {
 
 			resultado = dataSaida.format(dataValida);
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParseException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;
@@ -296,8 +293,8 @@ public final class DataUtil {
 
 			resultado = dataSaida.format(dataValida);
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParseException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;
@@ -313,16 +310,9 @@ public final class DataUtil {
 
 		String resultado = "";
 		Date dataHoje = new Date();
-		DateFormat dataSaida = new SimpleDateFormat(formatoDeSaida);
+		DateFormat dataSaida = new SimpleDateFormat(ConversaoUtil.nuloParaVazio(formatoDeSaida));
 
-		try {
-			resultado = dataSaida.format(dataHoje);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			dataHoje = null;
-			dataSaida = null;
-		}
+		resultado = dataSaida.format(dataHoje);
 
 		return resultado;
 	}
@@ -942,8 +932,8 @@ public final class DataUtil {
 				resultado = dataSaida.format(dataValida);
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParseException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;

@@ -22,12 +22,26 @@ package com.sporeon.baseutil;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.text.ParseException;
+
+import org.apache.log4j.Logger;
 
 /**
  * Classe base para utilitários de conversão.
  * @author Senio Caires
  */
 public final class ConversaoUtil {
+
+	/* ------------------------------
+	 * CONSTANTES
+	 * ------------------------------
+	 */
+
+	/**
+	 * Logger.
+	 * @author Senio Caires
+	 */
+	private static Logger logger = Logger.getLogger(ConversaoUtil.class);
 
 	/* ------------------------------
 	 * CONTRUTORES
@@ -360,9 +374,10 @@ public final class ConversaoUtil {
 			nf.setMinimumFractionDigits(2);
 			nf.setMaximumFractionDigits(2);
 
-			return new BigDecimal(nf.parse(valor).toString()).setScale(2, 1);
+			return new BigDecimal(nf.parse(nuloParaVazio(valor)).toString()).setScale(2, 1);
 
-		} catch (final Exception e) {
+		} catch (final ParseException e) {
+			logger.info("Erro ao converter. Retornando 0.00. " + e.getMessage());
 			return new BigDecimal("0.00").setScale(2, 1);
 		}
 	}
@@ -383,8 +398,8 @@ public final class ConversaoUtil {
 				resultado  = new Integer(valor.trim());
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			logger.error(e.getMessage());
 		}
 
 		return resultado;
