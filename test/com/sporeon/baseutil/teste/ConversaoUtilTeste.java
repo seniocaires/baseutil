@@ -36,7 +36,7 @@ import com.sporeon.baseutil.ConversaoUtil;
  * Classe de teste unitário para testar a classe {@link ConversaoUtil}.
  * @author Senio Caires
  */
-public final class ConversaoUtilTeste {
+public class ConversaoUtilTeste {
 
 	/* ------------------------------
 	 * CONSTANTES
@@ -127,10 +127,10 @@ public final class ConversaoUtilTeste {
 	 */
 
 	/**
-	 * Construtor padrão privado.
+	 * Construtor padrão.
 	 * @author Senio Caires
 	 */
-	private ConversaoUtilTeste() { }
+	public ConversaoUtilTeste() { }
 
 	/* ------------------------------
 	 * ANTES

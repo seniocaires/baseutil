@@ -36,7 +36,7 @@ import com.sporeon.baseutil.ComparacaoUtil;
  * Classe de teste unitário para testar a classe {@link ComparacaoUtil}.
  * @author Senio Caires
  */
-public final class ComparacaoUtilTeste {
+public class ComparacaoUtilTeste {
 
 	/* ------------------------------
 	 * CONSTANTES
@@ -97,10 +97,10 @@ public final class ComparacaoUtilTeste {
 	 */
 
 	/**
-	 * Construtor padrão privado.
+	 * Construtor padrão.
 	 * @author Senio Caires
 	 */
-	private ComparacaoUtilTeste() { }
+	public ComparacaoUtilTeste() { }
 
 	/* ------------------------------
 	 * ANTES

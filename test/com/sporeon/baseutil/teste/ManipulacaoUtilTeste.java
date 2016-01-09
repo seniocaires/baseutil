@@ -34,7 +34,7 @@ import com.sporeon.baseutil.ManipulacaoUtil;
  * Classe de teste unitário para testar a classe {@link ManipulacaoUtil}.
  * @author Senio Caires
  */
-public final class ManipulacaoUtilTeste {
+public class ManipulacaoUtilTeste {
 
 	/* ------------------------------
 	 * CONSTANTES
@@ -60,6 +60,12 @@ public final class ManipulacaoUtilTeste {
 	private static final String STRING_3_ESPACOS = "   ";
 
 	/**
+	 * String com espaços na esquerda e na direita.
+	 * @author Senio Caires
+	 */
+	private static final String STRING_ESPACOS_ESQUERDA_DIREITA = "    123    ";
+
+	/**
 	 * Número 6.
 	 * @author Senio Caires
 	 */
@@ -77,10 +83,10 @@ public final class ManipulacaoUtilTeste {
 	 */
 
 	/**
-	 * Construtor padrão privado.
+	 * Construtor padrão.
 	 * @author Senio Caires
 	 */
-	private ManipulacaoUtilTeste() { }
+	public ManipulacaoUtilTeste() { }
 
 	/* ------------------------------
 	 * ANTES
@@ -209,11 +215,9 @@ public final class ManipulacaoUtilTeste {
 
 		LOGGER.info("Testando removerEspacoEsquerda().");
 
-		final String string = "    123    ";
+		Assert.assertEquals("123    ", ManipulacaoUtil.removerEspacoEsquerda(STRING_ESPACOS_ESQUERDA_DIREITA));
 
-		Assert.assertEquals("123    ", ManipulacaoUtil.removerEspacoEsquerda(string));
-
-		Assert.assertEquals("", ManipulacaoUtil.removerEspacoEsquerda("   "));
+		Assert.assertEquals("", ManipulacaoUtil.removerEspacoEsquerda(STRING_3_ESPACOS));
 
 		Assert.assertEquals(null, ManipulacaoUtil.removerEspacoEsquerda(null));
 	}
@@ -227,9 +231,7 @@ public final class ManipulacaoUtilTeste {
 
 		LOGGER.info("Testando removerEspacoDireita().");
 
-		final String string = "    123    ";
-
-		Assert.assertEquals("    123", ManipulacaoUtil.removerEspacoDireita(string));
+		Assert.assertEquals("    123", ManipulacaoUtil.removerEspacoDireita(STRING_ESPACOS_ESQUERDA_DIREITA));
 
 		Assert.assertEquals("", ManipulacaoUtil.removerEspacoDireita("   "));
 
