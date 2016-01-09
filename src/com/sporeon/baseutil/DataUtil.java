@@ -46,7 +46,7 @@ public final class DataUtil {
 	 * Logger.
 	 * @author Senio Caires
 	 */
-	private static Logger logger = Logger.getLogger(DataUtil.class);
+	private static final Logger LOGGER = Logger.getLogger(DataUtil.class);
 
 	/* ------------------------------
 	 * CONTRUTORES
@@ -83,7 +83,7 @@ public final class DataUtil {
 		try {
 			resultado = dataEntrada.parse(data);
 		} catch (ParseException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;
@@ -106,7 +106,7 @@ public final class DataUtil {
 		try {
 			resultado = dataSaida.parse(dataSaida.format(dataEntrada.parse(data)));
 		} catch (ParseException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;
@@ -130,7 +130,7 @@ public final class DataUtil {
 		try {
 			resultado = dataSaida.parse(dataSaida.format(dataEntrada.parse(data)));
 		} catch (ParseException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;
@@ -241,7 +241,7 @@ public final class DataUtil {
 			resultado = dataSaida.format(dataValida);
 
 		} catch (ParseException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;
@@ -267,7 +267,7 @@ public final class DataUtil {
 			resultado = dataSaida.format(dataValida);
 
 		} catch (ParseException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;
@@ -294,7 +294,7 @@ public final class DataUtil {
 			resultado = dataSaida.format(dataValida);
 
 		} catch (ParseException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;
@@ -933,7 +933,7 @@ public final class DataUtil {
 			}
 
 		} catch (ParseException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;

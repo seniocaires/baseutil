@@ -41,7 +41,7 @@ public final class ConversaoUtil {
 	 * Logger.
 	 * @author Senio Caires
 	 */
-	private static Logger logger = Logger.getLogger(ConversaoUtil.class);
+	private static final Logger LOGGER = Logger.getLogger(ConversaoUtil.class);
 
 	/* ------------------------------
 	 * CONTRUTORES
@@ -377,7 +377,7 @@ public final class ConversaoUtil {
 			return new BigDecimal(nf.parse(nuloParaVazio(valor)).toString()).setScale(2, 1);
 
 		} catch (final ParseException e) {
-			logger.info("Erro ao converter. Retornando 0.00. " + e.getMessage());
+			LOGGER.info("Erro ao converter. Retornando 0.00. " + e.getMessage());
 			return new BigDecimal("0.00").setScale(2, 1);
 		}
 	}
@@ -399,7 +399,7 @@ public final class ConversaoUtil {
 			}
 
 		} catch (NumberFormatException e) {
-			logger.error(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 
 		return resultado;

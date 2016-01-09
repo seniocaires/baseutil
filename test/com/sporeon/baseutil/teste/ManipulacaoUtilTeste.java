@@ -20,11 +20,10 @@
  */
 package com.sporeon.baseutil.teste;
 
-import static org.junit.Assert.assertEquals;
-
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -46,7 +45,42 @@ public class ManipulacaoUtilTeste {
 	 * Logger.
 	 * @author Senio Caires
 	 */
-	private static Logger logger = Logger.getLogger(ManipulacaoUtilTeste.class);
+	private static final Logger LOGGER = Logger.getLogger(ManipulacaoUtilTeste.class);
+
+	/**
+	 * 123.
+	 * @author Senio Caires
+	 */
+	private static final String STRING_123 = "123";
+
+	/**
+	 * String com três espaços.
+	 * @author Senio Caires
+	 */
+	private static final String STRING_3_ESPACOS = "   ";
+
+	/**
+	 * Número 6.
+	 * @author Senio Caires
+	 */
+	private static final int NUMERO_6 = 6;
+
+	/**
+	 * Número 3.
+	 * @author Senio Caires
+	 */
+	private static final int NUMERO_3 = 3;
+
+	/* ------------------------------
+	 * CONTRUTORES
+	 * ------------------------------
+	 */
+
+	/**
+	 * Construtor padrão privado.
+	 * @author Senio Caires
+	 */
+	private ManipulacaoUtilTeste() { }
 
 	/* ------------------------------
 	 * ANTES
@@ -60,8 +94,8 @@ public class ManipulacaoUtilTeste {
 	 */
 	@BeforeClass
 	public static void executarAntesDeTudo() {
-		logger.info("------------------------------");
-		logger.info("Inicializando classe.");
+		LOGGER.info("------------------------------");
+		LOGGER.info("Inicializando classe.");
 	}
 
 	/**
@@ -70,7 +104,7 @@ public class ManipulacaoUtilTeste {
 	 */
 	@Before
 	public final void executarAntesDeCadaTeste() {
-		logger.info("Inicializando teste.");
+		LOGGER.info("Inicializando teste.");
 	}
 
 	/* ------------------------------
@@ -85,23 +119,19 @@ public class ManipulacaoUtilTeste {
 	@Test
 	public final void adicionarZeroEsquerda() {
 
-		logger.info("Testando adicionarZeroEsquerda().");
+		LOGGER.info("Testando adicionarZeroEsquerda().");
 
-		final String string = "123";
-		final int seisDigitos = 6;
-		final int tresDigitos = 3;
+		Assert.assertEquals("000123", ManipulacaoUtil.adicionarZeroEsquerda(STRING_123, NUMERO_6));
 
-		assertEquals("000123", ManipulacaoUtil.adicionarZeroEsquerda(string, seisDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarZeroEsquerda(STRING_123, NUMERO_3));
 
-		assertEquals("123", ManipulacaoUtil.adicionarZeroEsquerda(string, tresDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarZeroEsquerda(STRING_123, 0));
 
-		assertEquals("123", ManipulacaoUtil.adicionarZeroEsquerda(string, 0));
+		Assert.assertEquals("000", ManipulacaoUtil.adicionarZeroEsquerda("", NUMERO_3));
 
-		assertEquals("000", ManipulacaoUtil.adicionarZeroEsquerda("", tresDigitos));
+		Assert.assertEquals(null, ManipulacaoUtil.adicionarZeroEsquerda(null, NUMERO_6));
 
-		assertEquals(null, ManipulacaoUtil.adicionarZeroEsquerda(null, seisDigitos));
-
-		assertEquals("123", ManipulacaoUtil.adicionarZeroEsquerda(string, -1));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarZeroEsquerda(STRING_123, -1));
 	}
 
 	/**
@@ -111,23 +141,19 @@ public class ManipulacaoUtilTeste {
 	@Test
 	public final void adicionarEspacoEsquerda() {
 
-		logger.info("Testando adicionarEspacoEsquerda().");
+		LOGGER.info("Testando adicionarEspacoEsquerda().");
 
-		final String string = "123";
-		final int seisDigitos = 6;
-		final int tresDigitos = 3;
+		Assert.assertEquals("   123", ManipulacaoUtil.adicionarEspacoEsquerda(STRING_123, NUMERO_6));
 
-		assertEquals("   123", ManipulacaoUtil.adicionarEspacoEsquerda(string, seisDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarEspacoEsquerda(STRING_123, NUMERO_3));
 
-		assertEquals("123", ManipulacaoUtil.adicionarEspacoEsquerda(string, tresDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarEspacoEsquerda(STRING_123, 0));
 
-		assertEquals("123", ManipulacaoUtil.adicionarEspacoEsquerda(string, 0));
+		Assert.assertEquals(STRING_3_ESPACOS, ManipulacaoUtil.adicionarEspacoEsquerda("", NUMERO_3));
 
-		assertEquals("   ", ManipulacaoUtil.adicionarEspacoEsquerda("", tresDigitos));
+		Assert.assertEquals(null, ManipulacaoUtil.adicionarEspacoEsquerda(null, NUMERO_6));
 
-		assertEquals(null, ManipulacaoUtil.adicionarEspacoEsquerda(null, seisDigitos));
-
-		assertEquals("123", ManipulacaoUtil.adicionarEspacoEsquerda(string, -1));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarEspacoEsquerda(STRING_123, -1));
 	}
 
 	/**
@@ -137,23 +163,19 @@ public class ManipulacaoUtilTeste {
 	@Test
 	public final void adicionarZeroDireita() {
 
-		logger.info("Testando adicionarZeroDireita().");
+		LOGGER.info("Testando adicionarZeroDireita().");
 
-		final String string = "123";
-		final int seisDigitos = 6;
-		final int tresDigitos = 3;
+		Assert.assertEquals("123000", ManipulacaoUtil.adicionarZeroDireita(STRING_123, NUMERO_6));
 
-		assertEquals("123000", ManipulacaoUtil.adicionarZeroDireita(string, seisDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarZeroDireita(STRING_123, NUMERO_3));
 
-		assertEquals("123", ManipulacaoUtil.adicionarZeroDireita(string, tresDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarZeroDireita(STRING_123, 0));
 
-		assertEquals("123", ManipulacaoUtil.adicionarZeroDireita(string, 0));
+		Assert.assertEquals("000", ManipulacaoUtil.adicionarZeroDireita("", NUMERO_3));
 
-		assertEquals("000", ManipulacaoUtil.adicionarZeroDireita("", tresDigitos));
+		Assert.assertEquals(null, ManipulacaoUtil.adicionarZeroDireita(null, NUMERO_6));
 
-		assertEquals(null, ManipulacaoUtil.adicionarZeroDireita(null, seisDigitos));
-
-		assertEquals("123", ManipulacaoUtil.adicionarZeroDireita(string, -1));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarZeroDireita(STRING_123, -1));
 	}
 
 	/**
@@ -163,23 +185,19 @@ public class ManipulacaoUtilTeste {
 	@Test
 	public final void adicionarEspacoDireita() {
 
-		logger.info("Testando adicionarEspacoDireita().");
+		LOGGER.info("Testando adicionarEspacoDireita().");
 
-		final String string = "123";
-		final int seisDigitos = 6;
-		final int tresDigitos = 3;
+		Assert.assertEquals("123   ", ManipulacaoUtil.adicionarEspacoDireita(STRING_123, NUMERO_6));
 
-		assertEquals("123   ", ManipulacaoUtil.adicionarEspacoDireita(string, seisDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarEspacoDireita(STRING_123, NUMERO_3));
 
-		assertEquals("123", ManipulacaoUtil.adicionarEspacoDireita(string, tresDigitos));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarEspacoDireita(STRING_123, 0));
 
-		assertEquals("123", ManipulacaoUtil.adicionarEspacoDireita(string, 0));
+		Assert.assertEquals(STRING_3_ESPACOS, ManipulacaoUtil.adicionarEspacoDireita("", NUMERO_3));
 
-		assertEquals("   ", ManipulacaoUtil.adicionarEspacoDireita("", tresDigitos));
+		Assert.assertEquals(null, ManipulacaoUtil.adicionarEspacoDireita(null, NUMERO_6));
 
-		assertEquals(null, ManipulacaoUtil.adicionarEspacoDireita(null, seisDigitos));
-
-		assertEquals("123", ManipulacaoUtil.adicionarEspacoDireita(string, -1));
+		Assert.assertEquals(STRING_123, ManipulacaoUtil.adicionarEspacoDireita(STRING_123, -1));
 	}
 
 	/**
@@ -189,15 +207,15 @@ public class ManipulacaoUtilTeste {
 	@Test
 	public final void removerEspacoEsquerda() {
 
-		logger.info("Testando removerEspacoEsquerda().");
+		LOGGER.info("Testando removerEspacoEsquerda().");
 
-		String string = "    123    ";
+		final String string = "    123    ";
 
-		assertEquals("123    ", ManipulacaoUtil.removerEspacoEsquerda(string));
+		Assert.assertEquals("123    ", ManipulacaoUtil.removerEspacoEsquerda(string));
 
-		assertEquals("", ManipulacaoUtil.removerEspacoEsquerda("   "));
+		Assert.assertEquals("", ManipulacaoUtil.removerEspacoEsquerda("   "));
 
-		assertEquals(null, ManipulacaoUtil.removerEspacoEsquerda(null));
+		Assert.assertEquals(null, ManipulacaoUtil.removerEspacoEsquerda(null));
 	}
 
 	/**
@@ -207,15 +225,15 @@ public class ManipulacaoUtilTeste {
 	@Test
 	public final void removerEspacoDireita() {
 
-		logger.info("Testando removerEspacoDireita().");
+		LOGGER.info("Testando removerEspacoDireita().");
 
-		String string = "    123    ";
+		final String string = "    123    ";
 
-		assertEquals("    123", ManipulacaoUtil.removerEspacoDireita(string));
+		Assert.assertEquals("    123", ManipulacaoUtil.removerEspacoDireita(string));
 
-		assertEquals("", ManipulacaoUtil.removerEspacoDireita("   "));
+		Assert.assertEquals("", ManipulacaoUtil.removerEspacoDireita("   "));
 
-		assertEquals(null, ManipulacaoUtil.removerEspacoDireita(null));
+		Assert.assertEquals(null, ManipulacaoUtil.removerEspacoDireita(null));
 	}
 
 	/* ------------------------------
@@ -229,7 +247,7 @@ public class ManipulacaoUtilTeste {
 	 */
 	@After
 	public final void executarDepoisDeCadaTeste() {
-		logger.info("Sucesso!");
+		LOGGER.info("Sucesso!");
 	}
 
 	/**
@@ -239,6 +257,6 @@ public class ManipulacaoUtilTeste {
 	 */
 	@AfterClass
 	public static void executarDepoisDeTudo() {
-		logger.info("Finalizando classe.");
+		LOGGER.info("Finalizando classe.");
 	}
 }

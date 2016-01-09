@@ -20,15 +20,12 @@
  */
 package com.sporeon.baseutil.teste;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.math.BigDecimal;
 
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -50,7 +47,42 @@ public class ConversaoUtilTeste {
 	 * Logger.
 	 * @author Senio Caires
 	 */
-	private static Logger logger = Logger.getLogger(ConversaoUtilTeste.class);
+	private static final Logger LOGGER = Logger.getLogger(ConversaoUtilTeste.class);
+
+	/**
+	 * Número inteiro positivo.
+	 * @author Senio Caires
+	 */
+	private static final int INT_POSITIVO = 100;
+
+	/**
+	 * Número long positivo.
+	 * @author Senio Caires
+	 */
+	private static final long LONG_POSITIVO = 100L;
+
+	/**
+	 * Número float positivo.
+	 * @author Senio Caires
+	 */
+	private static final float FLOAT_POSITIVO = 100F;
+
+	/**
+	 * Número double positivo.
+	 * @author Senio Caires
+	 */
+	private static final double DOUBLE_POSITIVO = 100D;
+
+	/* ------------------------------
+	 * CONTRUTORES
+	 * ------------------------------
+	 */
+
+	/**
+	 * Construtor padrão privado.
+	 * @author Senio Caires
+	 */
+	private ConversaoUtilTeste() { }
 
 	/* ------------------------------
 	 * ANTES
@@ -64,8 +96,8 @@ public class ConversaoUtilTeste {
 	 */
 	@BeforeClass
 	public static void executarAntesDeTudo() {
-		logger.info("------------------------------");
-		logger.info("Inicializando classe.");
+		LOGGER.info("------------------------------");
+		LOGGER.info("Inicializando classe.");
 	}
 
 	/**
@@ -74,7 +106,7 @@ public class ConversaoUtilTeste {
 	 */
 	@Before
 	public final void executarAntesDeCadaTeste() {
-		logger.info("Inicializando teste.");
+		LOGGER.info("Inicializando teste.");
 	}
 
 	/* ------------------------------
@@ -89,19 +121,17 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void naoPositivoParaNuloInteger() {
 
-		logger.info("Testando naoPositivoParaNuloInteger().");
+		LOGGER.info("Testando naoPositivoParaNuloInteger().");
 
-		final int numeroPositivo = 100;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0));
+		final Integer testeNulo = null;
 
-		Integer testeNulo = null;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
-
-		assertEquals(new Integer(numeroPositivo), ConversaoUtil.naoPositivoParaNulo(numeroPositivo));
+		Assert.assertEquals(Integer.valueOf(INT_POSITIVO), ConversaoUtil.naoPositivoParaNulo(INT_POSITIVO));
 	}
 
 	/**
@@ -111,19 +141,17 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void naoPositivoParaNuloLong() {
 
-		logger.info("Testando naoPositivoParaNuloLong().");
+		LOGGER.info("Testando naoPositivoParaNuloLong().");
 
-		final long numeroPositivo = 100;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1L));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1L));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0L));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0L));
+		final Long testeNulo = null;
 
-		Long testeNulo = null;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
-
-		assertEquals(new Long(numeroPositivo), ConversaoUtil.naoPositivoParaNulo(numeroPositivo));
+		Assert.assertEquals(Long.valueOf(LONG_POSITIVO), ConversaoUtil.naoPositivoParaNulo(LONG_POSITIVO));
 	}
 
 	/**
@@ -133,19 +161,17 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void naoPositivoParaNuloFloat() {
 
-		logger.info("Testando naoPositivoParaNuloFloat().");
+		LOGGER.info("Testando naoPositivoParaNuloFloat().");
 
-		final float numeroPositivo = 100;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1F));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1F));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0F));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0F));
+		final Float testeNulo = null;
 
-		Float testeNulo = null;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
-
-		assertEquals(new Float(numeroPositivo), ConversaoUtil.naoPositivoParaNulo(numeroPositivo));
+		Assert.assertEquals(Float.valueOf(FLOAT_POSITIVO), ConversaoUtil.naoPositivoParaNulo(FLOAT_POSITIVO));
 	}
 
 	/**
@@ -155,19 +181,17 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void naoPositivoParaNuloDouble() {
 
-		logger.info("Testando naoPositivoParaNuloDouble().");
+		LOGGER.info("Testando naoPositivoParaNuloDouble().");
 
-		final double numeroPositivo = 100;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1D));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(-1D));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0D));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(0D));
+		final Double testeNulo = null;
 
-		Double testeNulo = null;
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
-
-		assertEquals(new Double(numeroPositivo), ConversaoUtil.naoPositivoParaNulo(numeroPositivo));
+		Assert.assertEquals(Double.valueOf(DOUBLE_POSITIVO), ConversaoUtil.naoPositivoParaNulo(DOUBLE_POSITIVO));
 	}
 
 	/**
@@ -177,19 +201,19 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void naoPositivoParaNuloBigDecimal() {
 
-		logger.info("Testando naoPositivoParaNuloBigDecimal().");
+		LOGGER.info("Testando naoPositivoParaNuloBigDecimal().");
 
 		final BigDecimal numeroPositivo = new BigDecimal(100);
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(new BigDecimal(-1)));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(BigDecimal.valueOf(-1)));
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(new BigDecimal(0)));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(BigDecimal.ZERO));
 
-		BigDecimal testeNulo = null;
+		final BigDecimal testeNulo = null;
 
-		assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
+		Assert.assertEquals(null, ConversaoUtil.naoPositivoParaNulo(testeNulo));
 
-		assertEquals(numeroPositivo, ConversaoUtil.naoPositivoParaNulo(numeroPositivo));
+		Assert.assertEquals(numeroPositivo, ConversaoUtil.naoPositivoParaNulo(numeroPositivo));
 	}
 
 	/**
@@ -199,13 +223,13 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaFalse() {
 
-		logger.info("Testando nuloParaFalse().");
+		LOGGER.info("Testando nuloParaFalse().");
 
-		assertFalse(ConversaoUtil.nuloParaFalse(null));
+		Assert.assertFalse(ConversaoUtil.nuloParaFalse(null));
 
-		assertFalse(ConversaoUtil.nuloParaFalse(false));
+		Assert.assertFalse(ConversaoUtil.nuloParaFalse(false));
 
-		assertTrue(ConversaoUtil.nuloParaFalse(true));
+		Assert.assertTrue(ConversaoUtil.nuloParaFalse(true));
 	}
 
 	/**
@@ -215,13 +239,13 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaTrue() {
 
-		logger.info("Testando nuloParaTrue().");
+		LOGGER.info("Testando nuloParaTrue().");
 
-		assertTrue(ConversaoUtil.nuloParaTrue(null));
+		Assert.assertTrue(ConversaoUtil.nuloParaTrue(null));
 
-		assertFalse(ConversaoUtil.nuloParaTrue(false));
+		Assert.assertFalse(ConversaoUtil.nuloParaTrue(false));
 
-		assertTrue(ConversaoUtil.nuloParaTrue(true));
+		Assert.assertTrue(ConversaoUtil.nuloParaTrue(true));
 	}
 
 	/**
@@ -231,15 +255,15 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaZeroInteger() {
 
-		logger.info("Testando nuloParaZeroInteger().");
+		LOGGER.info("Testando nuloParaZeroInteger().");
 
-		Integer testeNulo = null;
+		final Integer testeNulo = null;
 
-		assertEquals(new Integer(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Integer.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
 
-		assertEquals(new Integer(0), ConversaoUtil.nuloParaZero(0));
+		Assert.assertEquals(Integer.valueOf(0), ConversaoUtil.nuloParaZero(0));
 
-		assertEquals(new Integer(-1), ConversaoUtil.nuloParaZero(-1));
+		Assert.assertEquals(Integer.valueOf(-1), ConversaoUtil.nuloParaZero(-1));
 	}
 
 	/**
@@ -249,15 +273,15 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaZeroLong() {
 
-		logger.info("Testando nuloParaZeroLong().");
+		LOGGER.info("Testando nuloParaZeroLong().");
 
-		Long testeNulo = null;
+		final Long testeNulo = null;
 
-		assertEquals(new Long(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Long.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
 
-		assertEquals(new Long(0), ConversaoUtil.nuloParaZero(0L));
+		Assert.assertEquals(Long.valueOf(0), ConversaoUtil.nuloParaZero(0L));
 
-		assertEquals(new Long(-1), ConversaoUtil.nuloParaZero(-1L));
+		Assert.assertEquals(Long.valueOf(-1), ConversaoUtil.nuloParaZero(-1L));
 	}
 
 	/**
@@ -267,15 +291,15 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaZeroFloat() {
 
-		logger.info("Testando nuloParaZeroFloat().");
+		LOGGER.info("Testando nuloParaZeroFloat().");
 
-		Float testeNulo = null;
+		final Float testeNulo = null;
 
-		assertEquals(new Float(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Float.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
 
-		assertEquals(new Float(0), ConversaoUtil.nuloParaZero(0F));
+		Assert.assertEquals(Float.valueOf(0), ConversaoUtil.nuloParaZero(0F));
 
-		assertEquals(new Float(-1), ConversaoUtil.nuloParaZero(-1F));
+		Assert.assertEquals(Float.valueOf(-1), ConversaoUtil.nuloParaZero(-1F));
 	}
 
 	/**
@@ -285,15 +309,15 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaZeroDouble() {
 
-		logger.info("Testando nuloParaZeroDouble().");
+		LOGGER.info("Testando nuloParaZeroDouble().");
 
-		Double testeNulo = null;
+		final Double testeNulo = null;
 
-		assertEquals(new Double(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(Double.valueOf(0), ConversaoUtil.nuloParaZero(testeNulo));
 
-		assertEquals(new Double(0), ConversaoUtil.nuloParaZero(0D));
+		Assert.assertEquals(Double.valueOf(0), ConversaoUtil.nuloParaZero(0D));
 
-		assertEquals(new Double(-1), ConversaoUtil.nuloParaZero(-1D));
+		Assert.assertEquals(Double.valueOf(-1), ConversaoUtil.nuloParaZero(-1D));
 	}
 
 	/**
@@ -303,15 +327,15 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaZeroBigDecimal() {
 
-		logger.info("Testando nuloParaZeroBigDecimal().");
+		LOGGER.info("Testando nuloParaZeroBigDecimal().");
 
-		BigDecimal testeNulo = null;
+		final BigDecimal testeNulo = null;
 
-		assertEquals(new BigDecimal(0), ConversaoUtil.nuloParaZero(testeNulo));
+		Assert.assertEquals(BigDecimal.ZERO, ConversaoUtil.nuloParaZero(testeNulo));
 
-		assertEquals(new BigDecimal(0), ConversaoUtil.nuloParaZero(BigDecimal.ZERO));
+		Assert.assertEquals(BigDecimal.ZERO, ConversaoUtil.nuloParaZero(BigDecimal.ZERO));
 
-		assertEquals(new BigDecimal(1), ConversaoUtil.nuloParaZero(BigDecimal.ONE));
+		Assert.assertEquals(BigDecimal.ONE, ConversaoUtil.nuloParaZero(BigDecimal.ONE));
 	}
 
 	/**
@@ -321,19 +345,19 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaVazioString() {
 
-		logger.info("Testando nuloParaVazioString().");
+		LOGGER.info("Testando nuloParaVazioString().");
 
-		String stringNula = null;
+		final String stringNula = null;
 
-		assertEquals("", ConversaoUtil.nuloParaVazio(stringNula));
+		Assert.assertEquals("", ConversaoUtil.nuloParaVazio(stringNula));
 
-		assertFalse(" ".equals(ConversaoUtil.nuloParaVazio(stringNula)));
+		Assert.assertFalse(" ".equals(ConversaoUtil.nuloParaVazio(stringNula)));
 
-		assertFalse("teste".equals(ConversaoUtil.nuloParaVazio(stringNula)));
+		Assert.assertFalse("teste".equals(ConversaoUtil.nuloParaVazio(stringNula)));
 
-		assertFalse(ConversaoUtil.nuloParaVazio(stringNula) == null);
+		Assert.assertFalse(ConversaoUtil.nuloParaVazio(stringNula) == null);
 
-		assertFalse("teste".equals(ConversaoUtil.nuloParaVazio("TESTE")));
+		Assert.assertFalse("teste".equals(ConversaoUtil.nuloParaVazio("TESTE")));
 	}
 
 	/**
@@ -343,15 +367,15 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void nuloParaVazioCharacter() {
 
-		logger.info("Testando nuloParaVazioCharacter().");
+		LOGGER.info("Testando nuloParaVazioCharacter().");
 
-		Character characterNulo = null;
+		final Character characterNulo = null;
 
-		assertTrue(ConversaoUtil.nuloParaVazio(characterNulo) == ' ');
+		Assert.assertTrue(ConversaoUtil.nuloParaVazio(characterNulo) == ' ');
 
-		assertFalse(ConversaoUtil.nuloParaVazio(characterNulo) == null);
+		Assert.assertFalse(ConversaoUtil.nuloParaVazio(characterNulo) == null);
 
-		assertFalse(ConversaoUtil.nuloParaVazio('T') == null);
+		Assert.assertFalse(ConversaoUtil.nuloParaVazio('T') == null);
 	}
 
 	/**
@@ -361,14 +385,14 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void stringParaBigDecimal() {
 
-		logger.info("Testando stringParaBigDecimal(String).");
+		LOGGER.info("Testando stringParaBigDecimal(String).");
 
-		String stringNula = null;
-		String stringNaoNumerica = "a";
+		final String stringNula = null;
+		final String stringNaoNumerica = "a";
 
-		assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNula)));
+		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNula)));
 
-		assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNaoNumerica)));
+		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(stringNaoNumerica)));
 	}
 
 	/**
@@ -378,14 +402,14 @@ public class ConversaoUtilTeste {
 	@Test
 	public final void stringParaInteger() {
 
-		logger.info("Testando stringParaInteger(String).");
+		LOGGER.info("Testando stringParaInteger(String).");
 
-		String stringNula = null;
-		String stringNaoNumerica = "a";
+		final String stringNula = null;
+		final String stringNaoNumerica = "a";
 
-		assertTrue(ConversaoUtil.stringParaInteger(stringNula) == 0);
+		Assert.assertTrue(ConversaoUtil.stringParaInteger(stringNula) == 0);
 
-		assertTrue(ConversaoUtil.stringParaInteger(stringNaoNumerica) == 0);
+		Assert.assertTrue(ConversaoUtil.stringParaInteger(stringNaoNumerica) == 0);
 	}
 
 	/* ------------------------------
@@ -399,7 +423,7 @@ public class ConversaoUtilTeste {
 	 */
 	@After
 	public final void executarDepoisDeCadaTeste() {
-		logger.info("Sucesso!");
+		LOGGER.info("Sucesso!");
 	}
 
 	/**
@@ -409,6 +433,6 @@ public class ConversaoUtilTeste {
 	 */
 	@AfterClass
 	public static void executarDepoisDeTudo() {
-		logger.info("Finalizando classe.");
+		LOGGER.info("Finalizando classe.");
 	}
 }
