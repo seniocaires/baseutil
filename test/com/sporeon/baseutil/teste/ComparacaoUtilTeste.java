@@ -100,7 +100,9 @@ public class ComparacaoUtilTeste {
 	 * Construtor padrão.
 	 * @author Senio Caires
 	 */
-	public ComparacaoUtilTeste() { }
+	public ComparacaoUtilTeste() {
+		// JUnit requer um construtor público.
+	}
 
 	/* ------------------------------
 	 * ANTES

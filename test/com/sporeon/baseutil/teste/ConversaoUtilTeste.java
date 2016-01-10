@@ -50,6 +50,18 @@ public class ConversaoUtilTeste {
 	private static final Logger LOGGER = Logger.getLogger(ConversaoUtilTeste.class);
 
 	/**
+	 * New Scale para BigDecimal.
+	 * @author Senio Caires
+	 */
+	private static final int NEW_SCALE = 2;
+
+	/**
+	 * Rounding Mode para BigDecimal.
+	 * @author Senio Caires
+	 */
+	private static final int ROUNDING_MODE = 1;
+
+	/**
 	 * Número inteiro positivo.
 	 * @author Senio Caires
 	 */
@@ -130,7 +142,9 @@ public class ConversaoUtilTeste {
 	 * Construtor padrão.
 	 * @author Senio Caires
 	 */
-	public ConversaoUtilTeste() { }
+	public ConversaoUtilTeste() {
+		// JUnit requer um construtor público.
+	}
 
 	/* ------------------------------
 	 * ANTES
@@ -411,9 +425,9 @@ public class ConversaoUtilTeste {
 
 		LOGGER.info("Testando stringParaBigDecimal(String).");
 
-		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(STRING_NULA)));
+		Assert.assertTrue(BigDecimal.ZERO.setScale(NEW_SCALE, ROUNDING_MODE).equals(ConversaoUtil.stringParaBigDecimal(STRING_NULA)));
 
-		Assert.assertTrue(BigDecimal.ZERO.setScale(2, 1).equals(ConversaoUtil.stringParaBigDecimal(STRING_NAO_NUMERICA)));
+		Assert.assertTrue(BigDecimal.ZERO.setScale(NEW_SCALE, ROUNDING_MODE).equals(ConversaoUtil.stringParaBigDecimal(STRING_NAO_NUMERICA)));
 	}
 
 	/**

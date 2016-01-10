@@ -86,7 +86,9 @@ public class ManipulacaoUtilTeste {
 	 * Construtor padrão.
 	 * @author Senio Caires
 	 */
-	public ManipulacaoUtilTeste() { }
+	public ManipulacaoUtilTeste() {
+		// JUnit requer um construtor público.
+	}
 
 	/* ------------------------------
 	 * ANTES
