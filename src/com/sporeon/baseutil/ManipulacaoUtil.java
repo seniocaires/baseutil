@@ -173,19 +173,13 @@ public final class ManipulacaoUtil {
 
 		String resultado = "";
 
-		try {
+		for (int indice = string.length() - 1; indice >= 0; --indice) {
 
-			for (int indice = string.length() - 1; indice >= 0; --indice) {
+			if (string.charAt(indice) != ' ') {
 
-				if (string.charAt(indice) != ' ') {
-
-					resultado = string.substring(0, indice + 1);
-					break;
-				}
+				resultado = string.substring(0, indice + 1);
+				break;
 			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 
 		return resultado;
@@ -206,19 +200,13 @@ public final class ManipulacaoUtil {
 
 		String resultado = "";
 
-		try {
+		for (int indice = 0; indice < string.length(); indice++) {
 
-			for (int indice = 0; indice < string.length(); indice++) {
+			if (string.charAt(indice) != ' ') {
 
-				if (string.charAt(indice) != ' ') {
-
-					resultado = string.substring(indice, string.length());
-					break;
-				}
+				resultado = string.substring(indice, string.length());
+				break;
 			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 
 		return resultado;
@@ -238,27 +226,22 @@ public final class ManipulacaoUtil {
 		StringBuilder resultado = new StringBuilder();
 		StringBuilder caracterAdd = new StringBuilder();
 
-		try {
-			if (texto != null && !("".equals(texto))) {
-				resultado.append(texto.trim());
-			}
+		if (texto != null && !("".equals(texto))) {
+			resultado.append(texto.trim());
+		}
 
-			if (resultado.length() <= tamanhoMaximo) {
-				for (int i = 0; i < (tamanhoMaximo - resultado.length()); i++) {
-					caracterAdd.append(caracter);
-				}
-			} else {
-				return ConversaoUtil.nuloParaVazio(texto).substring(0, tamanhoMaximo);
+		if (resultado.length() <= tamanhoMaximo) {
+			for (int i = 0; i < (tamanhoMaximo - resultado.length()); i++) {
+				caracterAdd.append(caracter);
 			}
+		} else {
+			return ConversaoUtil.nuloParaVazio(texto).substring(0, tamanhoMaximo);
+		}
 
-			if (noInicio) {
-				resultado = new StringBuilder(caracterAdd + resultado.toString());
-			} else {
-				resultado.append(caracterAdd);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (noInicio) {
+			resultado = new StringBuilder(caracterAdd + resultado.toString());
+		} else {
+			resultado.append(caracterAdd);
 		}
 
 		return resultado.toString();

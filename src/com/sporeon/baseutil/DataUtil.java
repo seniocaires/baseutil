@@ -378,8 +378,10 @@ public final class DataUtil {
 
 			return true;
 		} catch (ParseException e) {
+			LOGGER.error(e.getMessage());
 			return false;
 		} catch (IllegalArgumentException e) {
+			LOGGER.error(e.getMessage());
 			return false;
 		}
 	}
@@ -405,6 +407,7 @@ public final class DataUtil {
 			return true;
 
 		} catch (IllegalArgumentException e) {
+			LOGGER.error(e.getMessage());
 			return false;
 		}
 	}
@@ -424,7 +427,8 @@ public final class DataUtil {
 		try {
 			dataEntrada.parse(data);
 			resultado = true;
-		} catch (Exception e) {
+		} catch (ParseException e) {
+			LOGGER.error(e.getMessage());
 			resultado = false;
 		}
 
