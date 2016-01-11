@@ -377,11 +377,12 @@ public final class DataUtil {
 			}
 
 			return true;
+
 		} catch (ParseException e) {
 			LOGGER.error("ParseException" + e.getMessage());
 			return false;
-		} catch (IllegalArgumentException e) {
-			LOGGER.error("IllegalArgumentException" + e.getMessage());
+		} catch (IllegalArgumentException iae) {
+			LOGGER.error("IllegalArgumentException" + iae.getMessage());
 			return false;
 		}
 	}
@@ -405,9 +406,8 @@ public final class DataUtil {
 			}
 
 			return true;
-
-		} catch (IllegalArgumentException e) {
-			LOGGER.error("IllegalArgumentException" + e.getMessage());
+		} catch (IllegalArgumentException iae) {
+			LOGGER.error("IllegalArgumentException" + iae.getMessage());
 			return false;
 		}
 	}
