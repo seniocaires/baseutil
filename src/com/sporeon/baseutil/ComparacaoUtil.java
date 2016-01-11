@@ -247,7 +247,8 @@ public final class ComparacaoUtil {
 			// Comparar o digito verificador do cpf com o primeiro resto + o segundo resto.
 			return numeroDigitoVerificador.equals(numeroDigitoResult);
 
-		} else if (cpfOuCnpjTemporario.length() == tamanhoCnpj) { // Rotina para CNPJ
+		} else if (cpfOuCnpjTemporario.length() == tamanhoCnpj) {
+			// Rotina para CNPJ
 
 			int soma = 0;
 			int dig = 0;

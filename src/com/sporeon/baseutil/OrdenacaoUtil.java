@@ -56,7 +56,6 @@ public final class OrdenacaoUtil {
 	* @return lista ordenada
 	* @author Senio Caires
 	*/
-	@SuppressWarnings("rawtypes")
 	public static List ordenarLista(final List lista, final String campo) {
 		return ordenarLista(lista, campo, TipoOrdenacao.CRESCENTE);
 	}
@@ -69,7 +68,6 @@ public final class OrdenacaoUtil {
 	* @return lista ordenada
 	* @author Senio Caires
 	*/
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List ordenarLista(final List lista, final String campo, final TipoOrdenacao tipoOrdenacao) {
 
 		if (lista != null && !lista.isEmpty() && campo != null && !(campo.trim().length() == 0)) {

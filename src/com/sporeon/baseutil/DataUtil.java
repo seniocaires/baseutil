@@ -851,7 +851,6 @@ public final class DataUtil {
 	 * @return idade
 	 * @author Senio Caires
 	 */
-	@SuppressWarnings("deprecation")
 	public static int getIdade(final Date data, final Date dataDeNascimento, final String diaOuMes) {
 
 		int idade = 0;
@@ -875,7 +874,6 @@ public final class DataUtil {
 	 * @return idade
 	 * @author Senio Caires
 	 */
-	@SuppressWarnings("deprecation")
 	public static int getIdade(final Date dataAtual, final Date dataDeNascimento) {
 
 		int idade = 0;
