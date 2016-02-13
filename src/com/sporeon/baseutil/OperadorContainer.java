@@ -52,7 +52,7 @@ public final class OperadorContainer {
 	 * @author Senio Caires
 	 */
 	public OperadorContainer() {
-		setOperadorPadrao();
+		this.setOperadorPadrao();
 	}
 
 	/**
@@ -61,7 +61,7 @@ public final class OperadorContainer {
 	 * @param operadoresParametro - Operadores
 	 */
 	public OperadorContainer(final List<Operador> operadoresParametro) {
-		setOperadores(operadoresParametro);
+		this.setOperadores(operadoresParametro);
 	}
 
 	/* ------------------------------
@@ -76,11 +76,11 @@ public final class OperadorContainer {
 	 */
 	public List<Operador> getOperadores() {
 
-		if (operadores == null) {
-			operadores = new ArrayList<Operador>();
+		if (this.operadores == null) {
+			this.operadores = new ArrayList<>();
 		}
 
-		return operadores;
+		return this.operadores;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public final class OperadorContainer {
 	 */
 	private void setOperadorPadrao() {
 
-		List<Operador> operadorPadrao = new ArrayList<Operador>();
+		List<Operador> operadorPadrao = new ArrayList<>();
 
 		/*
 		 * SQL
@@ -137,7 +137,7 @@ public final class OperadorContainer {
 		 */
 		operadorPadrao.add(new Operador(":ultimoDia(mes)", "Último dia do mês."));
 
-		setOperadores(operadorPadrao);
+		this.setOperadores(operadorPadrao);
 	}
 
 	/**
@@ -147,9 +147,9 @@ public final class OperadorContainer {
 	 */
 	public List<Operador> getOperadorSql() {
 
-		List<Operador> resultado = new ArrayList<Operador>();
+		List<Operador> resultado = new ArrayList<>();
 
-		for (Operador operador : getOperadores()) {
+		for (Operador operador : this.getOperadores()) {
 			if (operador.isTipoSql()) {
 				resultado.add(operador);
 			}
@@ -165,9 +165,9 @@ public final class OperadorContainer {
 	 */
 	public List<Operador> getOperadorData() {
 
-		List<Operador> resultado = new ArrayList<Operador>();
+		List<Operador> resultado = new ArrayList<>();
 
-		for (Operador operador : getOperadores()) {
+		for (Operador operador : this.getOperadores()) {
 			if (operador.isTipoData()) {
 				resultado.add(operador);
 			}
@@ -183,9 +183,9 @@ public final class OperadorContainer {
 	 */
 	public List<Operador> getOperadorFuncao() {
 
-		List<Operador> resultado = new ArrayList<Operador>();
+		List<Operador> resultado = new ArrayList<>();
 
-		resultado.addAll(getOperadorFuncaoUltimoDia());
+		resultado.addAll(this.getOperadorFuncaoUltimoDia());
 
 		return resultado;
 	}
@@ -197,9 +197,9 @@ public final class OperadorContainer {
 	 */
 	public List<Operador> getOperadorSqlPreparado() {
 
-		List<Operador> resultado = new ArrayList<Operador>();
+		List<Operador> resultado = new ArrayList<>();
 
-		for (Operador operador : getOperadores()) {
+		for (Operador operador : this.getOperadores()) {
 			if (operador.isTipoSql()) {
 				resultado.add(new Operador(" " + operador.getNome() + " ", operador.getDescricao(), " " + operador.getValor() + " "));
 			}
@@ -215,9 +215,9 @@ public final class OperadorContainer {
 	 */
 	public List<Operador> getOperadorDataPreparado() {
 
-		List<Operador> resultado = new ArrayList<Operador>();
+		List<Operador> resultado = new ArrayList<>();
 
-		for (Operador operador : getOperadores()) {
+		for (Operador operador : this.getOperadores()) {
 			if (operador.isTipoData()) {
 
 				String dataString;
@@ -242,9 +242,9 @@ public final class OperadorContainer {
 	 */
 	public List<Operador> getOperadorFuncaoPreparado() {
 
-		List<Operador> resultado = new ArrayList<Operador>();
+		List<Operador> resultado = new ArrayList<>();
 
-		for (Operador operador : getOperadorFuncao()) {
+		for (Operador operador : this.getOperadorFuncao()) {
 			if (operador.isTipoFuncao()) {
 				resultado.add(new Operador(operador.getNome(), operador.getDescricao(), operador.getValor()));
 			}
@@ -260,7 +260,7 @@ public final class OperadorContainer {
 	 */
 	private List<Operador> getOperadorFuncaoUltimoDia() {
 
-		List<Operador> resultado = new ArrayList<Operador>();
+		List<Operador> resultado = new ArrayList<>();
 
 		resultado.add(new Operador(":ultimoDia(1)", "Último dia de Janeiro (31)", "31", TipoOperador.FUNCAO));
 		resultado.add(new Operador(":ultimoDia(2)", "Último dia de Fevereiro (28 ou 29) do ano atual", String.valueOf(DataUtil.ultimoDiaDoMes(new Date())), TipoOperador.FUNCAO));

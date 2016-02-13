@@ -64,7 +64,9 @@ public class Operador {
 	 * Construtor padrão privado.
 	 * @author Senio Caires
 	 */
-	public Operador() { }
+	public Operador() {
+		// Construtor padrão.
+	}
 
 	/**
 	 * Constrói informando o nome e a descrição.
@@ -73,9 +75,9 @@ public class Operador {
 	 * @param descricaoParametro - Descrição
 	 */
 	public Operador(final String nomeParametro, final String descricaoParametro) {
-		setNome(nomeParametro);
-		setDescricao(descricaoParametro);
-		setValor(descricaoParametro);
+		this.setNome(nomeParametro);
+		this.setDescricao(descricaoParametro);
+		this.setValor(descricaoParametro);
 	}
 
 	/**
@@ -87,10 +89,10 @@ public class Operador {
 	 * @param tipoParametro - Tipo
 	 */
 	public Operador(final String nomeParametro, final String descricaoParametro, final String valorParametro, final TipoOperador tipoParametro) {
-		setNome(nomeParametro);
-		setDescricao(descricaoParametro);
-		setValor(valorParametro);
-		setTipo(tipoParametro);
+		this.setNome(nomeParametro);
+		this.setDescricao(descricaoParametro);
+		this.setValor(valorParametro);
+		this.setTipo(tipoParametro);
 	}
 
 	/**
@@ -101,9 +103,9 @@ public class Operador {
 	 * @param valorParametro - Valor
 	 */
 	public Operador(final String nomeParametro, final String descricaoParametro, final String valorParametro) {
-		setNome(nomeParametro);
-		setDescricao(descricaoParametro);
-		setValor(valorParametro);
+		this.setNome(nomeParametro);
+		this.setDescricao(descricaoParametro);
+		this.setValor(valorParametro);
 	}
 
 	/* ------------------------------
@@ -117,7 +119,7 @@ public class Operador {
 	 * @return nome
 	 */
 	public final String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	/**
@@ -135,7 +137,7 @@ public class Operador {
 	 * @return descricao
 	 */
 	public final String getDescricao() {
-		return descricao;
+		return this.descricao;
 	}
 
 	/**
@@ -153,7 +155,7 @@ public class Operador {
 	 * @return valor
 	 */
 	public final String getValor() {
-		return valor;
+		return this.valor;
 	}
 
 	/**
@@ -171,7 +173,7 @@ public class Operador {
 	 * @return tipo
 	 */
 	public final TipoOperador getTipo() {
-		return tipo;
+		return this.tipo;
 	}
 
 	/**
@@ -195,7 +197,7 @@ public class Operador {
 	 * @return true se o tipo for SQL.
 	 */
 	public final boolean isTipoSql() {
-		return TipoOperador.SQL.equals(getTipo());
+		return TipoOperador.SQL.equals(this.getTipo());
 	}
 
 	/**
@@ -205,7 +207,7 @@ public class Operador {
 	 * @return true se o tipo for DATA.
 	 */
 	public final boolean isTipoData() {
-		return TipoOperador.DATA.equals(getTipo());
+		return TipoOperador.DATA.equals(this.getTipo());
 	}
 
 	/**
@@ -215,6 +217,6 @@ public class Operador {
 	 * @return true se o tipo for FUNÇÃO.
 	 */
 	public final boolean isTipoFuncao() {
-		return TipoOperador.FUNCAO.equals(getTipo());
+		return TipoOperador.FUNCAO.equals(this.getTipo());
 	}
 }

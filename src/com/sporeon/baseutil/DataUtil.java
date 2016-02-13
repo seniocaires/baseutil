@@ -66,15 +66,15 @@ public final class DataUtil {
 
 	/**
 	 * Método Converte uma String (dd/mm/yyyy) em uma Data Válida.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return data - String
-	 * @author Senio Caires
 	 */
 	public static Date stringParaDate(final String data) {
 
 		Date resultado = null;
 
-		if (data == null || data.equals("")) {
+		if (data == null || "".equals(data)) {
 			return null;
 		}
 
@@ -91,10 +91,10 @@ public final class DataUtil {
 
 	/**
 	 * Método Converte uma String (formatoDeEntrada) em uma Data Válida.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param formatoDeEntrada - Formato de entrada
 	 * @return data - String
-	 * @author Senio Caires
 	 */
 	public static Date stringParaDate(final String data, final String formatoDeEntrada) {
 
@@ -114,11 +114,11 @@ public final class DataUtil {
 
 	/**
 	 * Método Converte uma String (formatoDeEntrada) em uma Data Válida.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param formatoDeEntrada - Formato de entrada
 	 * @param formatoDeSaida - Formato de saída
 	 * @return data - String
-	 * @author Senio Caires
 	 */
 	public static Date stringParaDate(final String data, final String formatoDeEntrada, final String formatoDeSaida) {
 
@@ -138,13 +138,13 @@ public final class DataUtil {
 
 	/**
 	 * Método Converte uma Data válida numa String de data : dd/MM/yyyy.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return data - String
-	 * @author Senio Caires
 	 */
 	public static String dateParaString(final Date data) {
 
-		String resultado = new String("");
+		String resultado = new String();
 
 		DateFormat dataSaida = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -159,33 +159,28 @@ public final class DataUtil {
 	 * Método Converte uma Data válida em uma String de data de acordo formato de Saída.
 	 * The year
 	 *	formatter = new SimpleDateFormat("yy"); // 02
-		formatter = new SimpleDateFormat("yyyy"); // 2002
-
+	 *	formatter = new SimpleDateFormat("yyyy"); // 2002
 	 * The month
-		formatter = new SimpleDateFormat("M"); // 1
-		formatter = new SimpleDateFormat("MM"); // 01
-		formatter = new SimpleDateFormat("MMM"); // Jan
-		formatter = new SimpleDateFormat("MMMM"); // January
-
+	 *	formatter = new SimpleDateFormat("M"); // 1
+	 *	formatter = new SimpleDateFormat("MM"); // 01
+	 *	formatter = new SimpleDateFormat("MMM"); // Jan
+	 *	formatter = new SimpleDateFormat("MMMM"); // January
 	 * The day
-		formatter = new SimpleDateFormat("d"); // 9
-		formatter = new SimpleDateFormat("dd"); // 09
-
+	 *	formatter = new SimpleDateFormat("d"); // 9
+	 *	formatter = new SimpleDateFormat("dd"); // 09
 	 * The day in week
-		formatter = new SimpleDateFormat("E"); // Wed
-		formatter = new SimpleDateFormat("EEEE"); // Wednesday
-
+	 *	formatter = new SimpleDateFormat("E"); // Wed
+	 *	formatter = new SimpleDateFormat("EEEE"); // Wednesday
 	 * Time
 	 * Format("yyyy.MM.dd.HH.mm.ss")
-
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param formatoDeSaida - Formato de saída
 	 * @return data - String
-	 * @author Senio Caires
 	 */
 	public static String dateParaString(final Date data, final String formatoDeSaida) {
 
-		String resultado = new String("");
+		String resultado = new String();
 
 		if (data == null) {
 			return resultado;
@@ -219,10 +214,10 @@ public final class DataUtil {
 
 	/**
 	 * Método para formatar data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param formatoDeEntrada - Formato de entrada
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static String formatarData(final String data, final String formatoDeEntrada) {
 
@@ -249,13 +244,13 @@ public final class DataUtil {
 
 	/**
 	 * Método para formatar data yyyy-MM-dd em dd/MM/yyyy.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static String formatarData(final String data) {
 
-		String resultado = new String("");
+		String resultado = new String();
 		DateFormat dataEntrada = new SimpleDateFormat("yyyy-MM-dd");
 
 		DateFormat dataSaida = new SimpleDateFormat("dd/MM/yyyy");
@@ -275,10 +270,10 @@ public final class DataUtil {
 
 	/**
 	 * Método para formatar data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param formatoDeEntrada - Formato de entrada
 	 * @param formatoDeSaida - Formato de saída
-	 * @author Senio Caires
 	 */
 	public static String formatarData(final String data, final String formatoDeEntrada, final String formatoDeSaida) {
 
@@ -302,9 +297,9 @@ public final class DataUtil {
 
 	/**
 	 * Retorna data atual no formato especificado.
+	 * @author Senio Caires
 	 * @param formatoDeSaida - Formato de saída
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static String getDataAtualFormatada(final String formatoDeSaida) {
 
@@ -319,9 +314,9 @@ public final class DataUtil {
 
 	/**
 	 * Método que retorna o último dia do mês de uma data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return ultimo dia do mês
-	 * @author Senio Caires
 	 */
 	public static int ultimoDiaDoMes(final Date data) {
 
@@ -338,10 +333,10 @@ public final class DataUtil {
 
 	/**
 	 * Método que retorna o último dia do mês.
+	 * @author Senio Caires
 	 * @param ano - Ano
 	 * @param mes - Mês
 	 * @return ultimo dia do mes
-	 * @author Senio Caires
 	 */
 	public static int ultimoDiaDoMes(final Integer ano, final Integer mes) {
 
@@ -356,9 +351,9 @@ public final class DataUtil {
 
 	/**
 	 * Método para verificar se é uma data válida.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isDataValida(final String data) {
 
@@ -379,19 +374,19 @@ public final class DataUtil {
 			return true;
 
 		} catch (ParseException e) {
-			LOGGER.error("ParseException" + e.getMessage());
-			return false;
+			LOGGER.error(e.getMessage());
 		} catch (IllegalArgumentException iae) {
-			LOGGER.error("IllegalArgumentException" + iae.getMessage());
-			return false;
+			LOGGER.error(iae.getMessage());
 		}
+
+		return false;
 	}
 
 	/**
 	 * Método para verificar se é uma data válida.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isDataValida(final Date data) {
 
@@ -407,16 +402,16 @@ public final class DataUtil {
 
 			return true;
 		} catch (IllegalArgumentException iae) {
-			LOGGER.error("IllegalArgumentException" + iae.getMessage());
+			LOGGER.error(iae.getMessage());
 			return false;
 		}
 	}
 
 	/**
 	 * Verifica se a data é valida.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return true se a data for valida
-	 * @author Senio Caires
 	 */
 	public boolean isDataFormatoValido(final String data) {
 
@@ -437,10 +432,10 @@ public final class DataUtil {
 
 	/**
 	 * Adicionar uma quantidade de dias a uma data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param quantidadeDeDias - Quantidade de dias
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static Date adicionarDias(final Date data, final int quantidadeDeDias) {
 
@@ -455,10 +450,10 @@ public final class DataUtil {
 
 	/**
 	 * Remover uma quantidade de dias de uma data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param quantidadeDeDias - Quantidade de dias
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static Date removerDias(final Date data, final int quantidadeDeDias) {
 
@@ -473,10 +468,10 @@ public final class DataUtil {
 
 	/**
 	 * Adicionar uma quantidade de meses a uma data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param quantidadeDeMeses - Quantidade de meses
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static Date adicionarMeses(final Date data, final int quantidadeDeMeses) {
 
@@ -491,10 +486,10 @@ public final class DataUtil {
 
 	/**
 	 * Remover uma quantidade de meses a uma data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param quantidadeDeMeses - Quantidade de mese
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static Date removerMeses(final Date data, final int quantidadeDeMeses) {
 
@@ -509,10 +504,10 @@ public final class DataUtil {
 
 	/**
 	 * Adicionar uma quantidade de anos a uma data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param quantidadeDeAnos - Quantidade de anos
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static Date adicionarAnos(final Date data, final int quantidadeDeAnos) {
 
@@ -527,10 +522,10 @@ public final class DataUtil {
 
 	/**
 	 * Remover uma quantidade de anos a uma data.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param quantidadeDeAnos - Quantidade de anos
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static Date removerAnos(final Date data, final int quantidadeDeAnos) {
 
@@ -545,11 +540,11 @@ public final class DataUtil {
 
 	/**
 	 * Converte os parâmetros em uma data.
+	 * @author Senio Caires
 	 * @param dia - Dia
 	 * @param mes - Mês
 	 * @param ano - Ano
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static Date getData(final int dia, final int mes, final int ano) {
 
@@ -562,9 +557,9 @@ public final class DataUtil {
 
 	/**
 	 * Retorna o número do mês, com dois dígitos.
+	 * @author Senio Caires
 	 * @param mes - Mês
 	 * @return mes
-	 * @author Senio Caires
 	 */
 	public static String getMesComDoisDigitos(final Integer mes) {
 		return  ManipulacaoUtil.adicionarChar('0', 2, String.valueOf(ConversaoUtil.nuloParaZero(mes)), true);
@@ -573,12 +568,12 @@ public final class DataUtil {
 	/**
 	 * Retorna uma lista de String com as horas do dia. <br/>
 	 * Intervalo de 30 minutos.
-	 * @return String
 	 * @author Senio Caires
+	 * @return String
 	 */
 	public static List<String> getHorasList() {
 
-		List<String> resultado = new ArrayList<String>();
+		List<String> resultado = new ArrayList<>();
 		final int ultimaHora = 23;
 		final int intervaloMinutos = 30;
 
@@ -593,24 +588,24 @@ public final class DataUtil {
 
 	/**
 	 * Método que retorna uma lista de anos, sendo o ano Corrente mais quantidadeRetroativa e Posterior.
+	 * @author Senio Caires
 	 * @param quantidadeRetroativa - Quantidade retroativa
 	 * @param quantidadePosterior - Quantidade posterior
 	 * @return lista de anos
-	 * @author Senio Caires
 	 */
 	public static List<String> anoList(final int quantidadeRetroativa, final int quantidadePosterior) {
 
-		List<String> resultado = new ArrayList<String>();
+		List<String> resultado = new ArrayList<>();
 		int anoCorrente = Integer.parseInt(dateParaString(new Date(), "yyyy"));
 
 		for (int indice = quantidadeRetroativa; indice >= 1; indice--) {
-			resultado.add(new Integer(anoCorrente - indice).toString());
+			resultado.add(Integer.valueOf(anoCorrente - indice).toString());
 		}
 
 		resultado.add(String.valueOf(anoCorrente));
 
 		for (int indice = 1; indice <= quantidadePosterior; indice++) {
-			resultado.add(new Integer(anoCorrente + indice).toString());
+			resultado.add(Integer.valueOf(anoCorrente + indice).toString());
 		}
 
 		return resultado;
@@ -618,29 +613,29 @@ public final class DataUtil {
 
 	/**
 	 * Método que retorna uma lista de anos, sendo o ano Inicial (Null para o Ano corrente) mais quantidadeRetroativa e Posterior.
+	 * @author Senio Caires
 	 * @param anoInicial - Ano inicial
 	 * @param quantidadeRetroativa - Quantidade retroativa
 	 * @param quantidadePosterior - Quantidade posterior
 	 * @return lista de anos
-	 * @author Senio Caires
 	 */
 	public static List<Integer> anoList(final Integer anoInicial, final int quantidadeRetroativa, final int quantidadePosterior) {
 
 		Integer anoInicialTemporario = anoInicial;
-		List<Integer> resultado = new ArrayList<Integer>();
+		List<Integer> resultado = new ArrayList<>();
 
 		if (anoInicialTemporario == null) {
 			anoInicialTemporario = Integer.parseInt(dateParaString(new Date(), "yyyy"));
 		}
 
 		for (int i = quantidadeRetroativa; i >= 1; i--) {
-			resultado.add(new Integer(anoInicialTemporario - i));
+			resultado.add(Integer.valueOf(anoInicialTemporario - i));
 		}
 
 		resultado.add(anoInicialTemporario);
 
 		for (int i = 1; i <= quantidadePosterior; i++) {
-			resultado.add(new Integer(anoInicialTemporario + i));
+			resultado.add(Integer.valueOf(anoInicialTemporario + i));
 		}
 
 		return resultado;
@@ -648,12 +643,12 @@ public final class DataUtil {
 
 	/**
 	 * Retorna uma lista de mês.
-	 * @return lista de mes
 	 * @author Senio Caires
+	 * @return lista de mes
 	 */
 	public static List<String> mesPorExtensoList() {
 
-		List<String> resultado = new ArrayList<String>();
+		List<String> resultado = new ArrayList<>();
 		final int mesInicial = 1;
 		final int mesFinal = 12;
 
@@ -666,12 +661,12 @@ public final class DataUtil {
 
 	/**
 	 * Retorna uma lista de dias.
-	 * @return lista de dias
 	 * @author Senio Caires
+	 * @return lista de dias
 	 */
 	public static List<String> diaList() {
 
-		List<String> resultado = new ArrayList<String>();
+		List<String> resultado = new ArrayList<>();
 		final int diaInicial = 1;
 		final int diaFinal = 31;
 
@@ -684,13 +679,13 @@ public final class DataUtil {
 
 	/**
 	 * Método que retorna o nome do mês, de acordo com o número do mês passado por parâmetro.
+	 * @author Senio Caires
 	 * @param mes - Mês
 	 * @return nome do mes
-	 * @author Senio Caires
 	 */
 	public static String getMesPorExtenso(final Integer mes) {
 
-		String resultado = new String("");
+		String resultado = new String();
 		final int numeroMesJaneiro = 1;
 		final int numeroMesFevereiro = 2;
 		final int numeroMesMarco = 3;
@@ -739,69 +734,49 @@ public final class DataUtil {
 
 	/**
 	 * Método que retorna o número do mês, de acordo com a descrição do mês passado por parâmetro.
+	 * @author Senio Caires
 	 * @param mesDescricao - Descrição do mês
 	 * @return numero do mes
-	 * @author Senio Caires
 	 */
 	public static String getNumeroMes(final String mesDescricao) {
 
-		if (mesDescricao.equalsIgnoreCase("Janeiro")) {
-			return "01";
+		final StringBuilder retorno = new StringBuilder();
+
+		if ("Janeiro".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("01");
+		} else if ("Fevereiro".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("02");
+		} else if ("Março".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("03");
+		} else if ("Abril".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("04");
+		} else if ("Maio".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("05");
+		} else if ("Junho".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("06");
+		} else if ("Julho".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("07");
+		} else if ("Agosto".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("08");
+		} else if ("Setembro".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("09");
+		} else if ("Outubro".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("10");
+		} else if ("Novembro".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("11");
+		} else if ("Dezembro".equalsIgnoreCase(mesDescricao)) {
+			retorno.append("12");
 		}
 
-		if (mesDescricao.equalsIgnoreCase("Fevereiro")) {
-			return "02";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Março")) {
-			return "03";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Abril")) {
-			return "04";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Maio")) {
-			return "05";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Junho")) {
-			return "06";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Julho")) {
-			return "07";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Agosto")) {
-			return "08";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Setembro")) {
-			return "09";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Outubro")) {
-			return "10";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Novembro")) {
-			return "11";
-		}
-
-		if (mesDescricao.equalsIgnoreCase("Dezembro")) {
-			return "12";
-		}
-
-		return "";
+		return retorno.toString();
 	}
 
 	/**
 	 * Retorna a quantidade de dias entre as datas passadas como parâmetro.
+	 * @author Senio Caires
 	 * @param dataInicial - Data inicial
 	 * @param dataFinal - Data final
 	 * @return quantidade de dias
-	 * @author Senio Caires
 	 */
 	public static Integer diasEntreDatas(final Date dataInicial, final Date dataFinal) {
 
@@ -822,15 +797,15 @@ public final class DataUtil {
 			diferencaDias = new Long(0);
 		}
 
-		return new Integer(diferencaDias.intValue());
+		return Integer.valueOf(diferencaDias.intValue());
 	}
 
 	/**
 	 * Retorna a diferença entre as datas passadas como parâmetro.
+	 * @author Senio Caires
 	 * @param dataInicial - Data inicial
 	 * @param dataFinal - Data final
 	 * @return diferença
-	 * @author Senio Caires
 	 */
 	public static Long diferencaEntreDatas(final Date dataInicial, final Date dataFinal) {
 
@@ -845,11 +820,11 @@ public final class DataUtil {
 
 	/**
 	 * Método para retornar a idade, em anos.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @param dataDeNascimento - Data de nascimento
 	 * @param diaOuMes - Dia ou mês
 	 * @return idade
-	 * @author Senio Caires
 	 */
 	public static int getIdade(final Date data, final Date dataDeNascimento, final String diaOuMes) {
 
@@ -869,10 +844,10 @@ public final class DataUtil {
 
 	/**
 	 * Método para retornar a idade, em anos.
+	 * @author Senio Caires
 	 * @param dataAtual - Data atual
 	 * @param dataDeNascimento - data de nascimento
 	 * @return idade
-	 * @author Senio Caires
 	 */
 	public static int getIdade(final Date dataAtual, final Date dataDeNascimento) {
 
@@ -892,8 +867,8 @@ public final class DataUtil {
 
 	/**
 	 * Retorna a data atual.
-	 * @return data atual
 	 * @author Senio Caires
+	 * @return data atual
 	 */
 	public static Date getDataAtual() {
 
@@ -906,9 +881,9 @@ public final class DataUtil {
 
 	/**
 	 * Converte uma data dd/MM/yy ou dd/MM/yyyy em yyyy/MM/dd.
+	 * @author Senio Caires
 	 * @param data - Data
 	 * @return data
-	 * @author Senio Caires
 	 */
 	public static String converterDataParaAnoMesDia(final String data) {
 
@@ -919,7 +894,7 @@ public final class DataUtil {
 
 		try {
 
-			if (data != null && !data.equals("")) {
+			if (data != null && !"".equals(data)) {
 
 				if (data.length() == tamanhoData) {
 					dataEntrada = new SimpleDateFormat("dd/MM/yy");

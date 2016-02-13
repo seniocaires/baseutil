@@ -51,10 +51,10 @@ public final class OrdenacaoUtil {
 	/**
 	* Método responsável por retorna uma lista de Object ordenada pelo nome do campo informado. <br/>
 	* Ordena em ordem crescente.
+	* @author Senio Caires
 	* @param lista - Lista
 	* @param campo - Campo
 	* @return lista ordenada
-	* @author Senio Caires
 	*/
 	public static List ordenarLista(final List lista, final String campo) {
 		return ordenarLista(lista, campo, TipoOrdenacao.CRESCENTE);
@@ -62,11 +62,11 @@ public final class OrdenacaoUtil {
 
 	/**
 	* Método responsável por retorna uma lista de Object ordenada pelo nome do campo informado.
+	* @author Senio Caires
 	* @param lista - Lista
 	* @param campo - Campo
 	* @param tipoOrdenacao - Tipo de ordenação
 	* @return lista ordenada
-	* @author Senio Caires
 	*/
 	public static List ordenarLista(final List lista, final String campo, final TipoOrdenacao tipoOrdenacao) {
 
@@ -74,6 +74,7 @@ public final class OrdenacaoUtil {
 
 			BeanComparator ordem = new BeanComparator(campo, new Comparator() {
 
+				@Override
 				public int compare(final Object o1, final Object o2) {
 
 					int resultado = 0;

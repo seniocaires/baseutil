@@ -46,10 +46,10 @@ public final class ManipulacaoUtil {
 	 * Método para preencher uma string com Zeros à esquerda até o tamanho passado como parâmetro. <br/>
 	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br/>
 	 * Se a string for nula, retorna null.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @param tamanho - Tamanho
 	 * @return string
-	 * @author Senio Caires
 	 * @see java.lang.StringBuilder
 	 */
 	public static String adicionarZeroEsquerda(final String string, final int tamanho) {
@@ -75,10 +75,10 @@ public final class ManipulacaoUtil {
 	 * Método para preencher uma string com Zeros à direita até o tamanho passado como parâmetro. <br/>
 	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br/>
 	 * Se a string for nula, retorna null.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @param tamanho - Tamanho
 	 * @return string
-	 * @author Senio Caires
 	 * @see java.lang.StringBuilder
 	 */
 	public static String adicionarZeroDireita(final String string, final int tamanho) {
@@ -94,7 +94,7 @@ public final class ManipulacaoUtil {
 		StringBuilder resultado = new StringBuilder(string);
 
 		for (int i = string.length(); i <= (tamanho - 1); i++) {
-			resultado.append("0");
+			resultado.append('0');
 		}
 
 		return resultado.toString();
@@ -104,10 +104,10 @@ public final class ManipulacaoUtil {
 	 * Método para preencher uma string com Espaços à esquerda até o tamanho passado como parâmetro. <br/>
 	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br/>
 	 * Se a string for nula, retorna null.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @param tamanho - Tamanho
 	 * @return string
-	 * @author Senio Caires
 	 * @see java.lang.StringBuilder
 	 */
 	public static String adicionarEspacoEsquerda(final String string, final int tamanho) {
@@ -133,10 +133,10 @@ public final class ManipulacaoUtil {
 	 * Método para preencher uma string com Espaços à direita até o tamanho passado como parâmetro. <br/>
 	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br/>
 	 * Se a string for nula, retorna null.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @param tamanho - Tamanho
 	 * @return string
-	 * @author Senio Caires
 	 * @see java.lang.StringBuilder
 	 */
 	public static String adicionarEspacoDireita(final String string, final int tamanho) {
@@ -152,7 +152,7 @@ public final class ManipulacaoUtil {
 		StringBuilder resultado = new StringBuilder(string);
 
 		for (int i = string.length(); i <= (tamanho - 1); i++) {
-			resultado.append(" ");
+			resultado.append(' ');
 		}
 
 		return resultado.toString();
@@ -161,9 +161,9 @@ public final class ManipulacaoUtil {
 	/**
 	 * Método remover espaço à direita da string passada como parâmetro. <br/>
 	 * Se a string for nula, retorna null.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @return String
-	 * @author Senio Caires
 	 */
 	public static String removerEspacoDireita(final String string) {
 
@@ -188,9 +188,9 @@ public final class ManipulacaoUtil {
 	/**
 	 * Método remover espaço à esquerda da string passada como parâmetro. <br/>
 	 * Se a string for nula, retorna null.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @return String
-	 * @author Senio Caires
 	 */
 	public static String removerEspacoEsquerda(final String string) {
 
@@ -214,12 +214,12 @@ public final class ManipulacaoUtil {
 
 	/**
 	 * Adiciona um caracter (String) em um texto (String).
+	 * @author Senio Caires
 	 * @param caracter - Caractere
 	 * @param tamanhoMaximo - Tamanho máximo
 	 * @param texto - Texto
 	 * @param noInicio - No início
 	 * @return texto
-	 * @author Senio Caires
 	 */
 	public static String adicionarChar(final char caracter, final int tamanhoMaximo, final String texto, final boolean noInicio) {
 
@@ -249,10 +249,10 @@ public final class ManipulacaoUtil {
 
 	/**
 	 * Método para remover o char passado como parâmetro da string.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @param character - Caractere
 	 * @return string
-	 * @author Senio Caires
 	 */
 	public static String removerCharEsquerda(final String string, final char character) {
 
@@ -270,9 +270,9 @@ public final class ManipulacaoUtil {
 
 	/**
 	 * Remove todas as quebras de linhas contidas em uma string.
+	 * @author Senio Caires
 	 * @param string - String
 	 * @return String
-	 * @author Senio Caires
 	 */
 	public static String removerQuebraDeLinha(final String string) {
 		return string.replaceAll("(\n|\r)+", "");
@@ -280,11 +280,11 @@ public final class ManipulacaoUtil {
 
 	/**
 	 * Substitui todas as stringAhSerSubstituida por stringSubstituta que est�o na stringCompleta.
+	 * @author Senio Caires
 	 * @param stringCompleta - String completa
 	 * @param stringAhSerSubstituida - String a ser substituida
 	 * @param stringSubstituta - String substituta
 	 * @return String
-	 * @author Senio Caires
 	 */
 	public static String substituirString(final String stringCompleta, final String stringAhSerSubstituida, final String stringSubstituta) {
 
@@ -318,9 +318,9 @@ public final class ManipulacaoUtil {
 
 	/**
 	 * Retorna uma String sql sem Order By.
+	 * @author Senio Caires
 	 * @param sql - SQL
 	 * @return String
-	 * @author Senio Caires
 	 */
 	public static String removerOrderBy(final String sql) {
 
@@ -337,9 +337,9 @@ public final class ManipulacaoUtil {
 
 	/**
 	 * Retorna o Order By de uma string Sql.
+	 * @author Senio Caires
 	 * @param sql - SQL
 	 * @return String
-	 * @author Senio Caires
 	 */
 	public static String getOrderBy(final String sql) {
 

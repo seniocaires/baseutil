@@ -62,9 +62,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna uma String vazia ("") se o parâmetro passado for nulo. <br/>
 	 * Se o parâmetro não for nulo, retorna ele mesmo.
+	 * @author Senio Caires
 	 * @param valorString - Valor
 	 * @return vazio ("") ou valorString.
-	 * @author Senio Caires
 	 */
 	public static String nuloParaVazio(final String valorString) {
 
@@ -82,9 +82,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna um Character vazio (' ') se o parâmetro passado for nulo. <br/>
 	 * Se o parâmetro não for nulo, retorna ele mesmo.
+	 * @author Senio Caires
 	 * @param valorCharacter - Valor
 	 * @return vazio (' ') ou valorCharacter.
-	 * @author Senio Caires
 	 */
 	public static Character nuloParaVazio(final Character valorCharacter) {
 
@@ -107,9 +107,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna zero se o Integer for nulo. <br/>
 	 * Se não for nulo, retorna o valor original.
+	 * @author Senio Caires
 	 * @param valorInteger - Valor
 	 * @return zero ou valorInteger.
-	 * @author Senio Caires
 	 */
 	public static Integer nuloParaZero(final Integer valorInteger) {
 
@@ -127,9 +127,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna zero se o Long for nulo. <br/>
 	 * Se não for nulo, retorna o valor original.
+	 * @author Senio Caires
 	 * @param valorLong - Valor
 	 * @return zero ou valorLong.
-	 * @author Senio Caires
 	 */
 	public static Long nuloParaZero(final Long valorLong) {
 
@@ -147,16 +147,16 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna zero se o Float for nulo. <br/>
 	 * Se não for nulo, retorna o valor original.
+	 * @author Senio Caires
 	 * @param valorFloat - Valor
 	 * @return zero ou valorFloat.
-	 * @author Senio Caires
 	 */
 	public static Float nuloParaZero(final Float valorFloat) {
 
 		Float retorno;
 
 		if (valorFloat == null) {
-			retorno = 0.0f;
+			retorno = 0.0F;
 		} else {
 			retorno = valorFloat;
 		}
@@ -167,9 +167,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna zero se o Double for nulo. <br/>
 	 * Se não for nulo, retorna o valor original.
+	 * @author Senio Caires
 	 * @param valorDouble - Valor
 	 * @return zero ou valorDouble.
-	 * @author Senio Caires
 	 */
 	public static Double nuloParaZero(final Double valorDouble) {
 
@@ -187,9 +187,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna zero se o BigDecimal for nulo. <br/>
 	 * Se não for nulo, retorna o valor original.
+	 * @author Senio Caires
 	 * @param valorBigDecimal - Valor
 	 * @return zero ou valorBigDecimal.
-	 * @author Senio Caires
 	 */
 	public static BigDecimal nuloParaZero(final BigDecimal valorBigDecimal) {
 
@@ -212,9 +212,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna false se o valorBoolean for nulo. <br/>
 	 * Se o valorBoolean não for nulo, retorna ele mesmo.
+	 * @author Senio Caires
 	 * @param valorBoolean - Valor
 	 * @return false ou o valorBoolean.
-	 * @author Senio Caires
 	 */
 	public static Boolean nuloParaFalse(final Boolean valorBoolean) {
 
@@ -232,9 +232,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna true se o valorBoolean for nulo. <br/>
 	 * Se o valorBoolean não for nulo, retorna ele mesmo.
+	 * @author Senio Caires
 	 * @param valorBoolean - Valor
 	 * @return true ou o valorBoolean.
-	 * @author Senio Caires
 	 */
 	public static Boolean nuloParaTrue(final Boolean valorBoolean) {
 
@@ -257,9 +257,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna nulo se o Integer não for Positivo. <br/>
 	 * Se for positivo, retorna ele o valor original.
+	 * @author Senio Caires
 	 * @param valorInteger - Valor
 	 * @return nulo ou valorInteger.
-	 * @author Senio Caires
 	 * @see ComparacaoUtil#isPositivo(Integer)
 	 */
 	public static Integer naoPositivoParaNulo(final Integer valorInteger) {
@@ -278,9 +278,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna nulo se o Long não for Positivo. <br/>
 	 * Se for positivo, retorna ele o valor original.
+	 * @author Senio Caires
 	 * @param valorLong - Valor
 	 * @return nulo ou valorLong.
-	 * @author Senio Caires
 	 * @see ComparacaoUtil#isPositivo(Long)
 	 */
 	public static Long naoPositivoParaNulo(final Long valorLong) {
@@ -299,9 +299,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna nulo se o Float não for Positivo. <br/>
 	 * Se for positivo, retorna ele o valor original.
+	 * @author Senio Caires
 	 * @param valorFloat - Valor
 	 * @return nulo ou valorFloat.
-	 * @author Senio Caires
 	 * @see ComparacaoUtil#isPositivo(Float)
 	 */
 	public static Float naoPositivoParaNulo(final Float valorFloat) {
@@ -320,9 +320,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna nulo se o Double não for Positivo. <br/>
 	 * Se for positivo, retorna ele o valor original.
+	 * @author Senio Caires
 	 * @param valorDouble - Valor
 	 * @return nulo ou valorDouble.
-	 * @author Senio Caires
 	 * @see ComparacaoUtil#isPositivo(Double)
 	 */
 	public static Double naoPositivoParaNulo(final Double valorDouble) {
@@ -341,9 +341,9 @@ public final class ConversaoUtil {
 	/**
 	 * Retorna nulo se o BigDecimal não for Positivo. <br/>
 	 * Se for positivo, retorna ele o valor original.
+	 * @author Senio Caires
 	 * @param valorBigDecimal - Valor
 	 * @return nulo ou valorBigDecimal.
-	 * @author Senio Caires
 	 * @see ComparacaoUtil#isPositivo(BigDecimal)
 	 */
 	public static BigDecimal naoPositivoParaNulo(final BigDecimal valorBigDecimal) {
@@ -361,9 +361,9 @@ public final class ConversaoUtil {
 
 	/**
 	 * Converte uma string para BigDecimal.
+	 * @author Senio Caires
 	 * @param valor - Valor
 	 * @return BigDecimal
-	 * @author Senio Caires
 	 */
 	public static BigDecimal stringParaBigDecimal(final String valor) {
 
@@ -377,16 +377,20 @@ public final class ConversaoUtil {
 			return new BigDecimal(nf.parse(nuloParaVazio(valor)).toString()).setScale(2, 1);
 
 		} catch (final ParseException e) {
-			LOGGER.info("Erro ao converter. Retornando 0.00. " + e.getMessage());
+
+			if (LOGGER.isInfoEnabled()) {
+				LOGGER.info("Erro ao converter. Retornando 0.00. " + e.getMessage());
+			}
+
 			return new BigDecimal("0.00").setScale(2, 1);
 		}
 	}
 
 	/**
 	 * Converte uma string para int.
+	 * @author Senio Caires
 	 * @param valor - Valor
 	 * @return int
-	 * @author Senio Caires
 	 */
 	public static int stringParaInteger(final String valor) {
 
@@ -395,7 +399,7 @@ public final class ConversaoUtil {
 		try {
 
 			if (!ComparacaoUtil.isVazio(valor)) {
-				resultado  = new Integer(valor.trim());
+				resultado  = Integer.valueOf(valor.trim());
 			}
 
 		} catch (NumberFormatException e) {

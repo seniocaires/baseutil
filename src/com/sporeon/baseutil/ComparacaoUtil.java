@@ -48,9 +48,9 @@ public final class ComparacaoUtil {
 	 * Verifica se um Integer é Positivo. <br/>
 	 * Retorna true se for positivo. <br/>
 	 * Se for nulo, retorna false.
+	 * @author Senio Caires
 	 * @param valorInteger - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isPositivo(final Integer valorInteger) {
 		return valorInteger != null && valorInteger > 0;
@@ -60,9 +60,9 @@ public final class ComparacaoUtil {
 	 * Verifica se um Long é Positivo. <br/>
 	 * Retorna true se for positivo. <br/>
 	 * Se for nulo, retorna false.
+	 * @author Senio Caires
 	 * @param valorLong - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isPositivo(final Long valorLong) {
 		return valorLong != null && valorLong > 0L;
@@ -72,9 +72,9 @@ public final class ComparacaoUtil {
 	 * Verifica se um Float é Positivo. <br/>
 	 * Retorna true se for positivo. <br/>
 	 * Se for nulo, retorna false.
+	 * @author Senio Caires
 	 * @param valorFloat - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isPositivo(final Float valorFloat) {
 		return valorFloat != null && valorFloat > 0.0F;
@@ -84,9 +84,9 @@ public final class ComparacaoUtil {
 	 * Verifica se um Double é Positivo. <br/>
 	 * Retorna true se for positivo. <br/>
 	 * Se for nulo, retorna false.
+	 * @author Senio Caires
 	 * @param valorDouble - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isPositivo(final Double valorDouble) {
 		return valorDouble != null && valorDouble > 0.0;
@@ -96,9 +96,9 @@ public final class ComparacaoUtil {
 	 * Verifica se um BigDecimal é Positivo. <br/>
 	 * Retorna true se for positivo. <br/>
 	 * Se for nulo, retorna false.
+	 * @author Senio Caires
 	 * @param valorBigDecimal - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isPositivo(final BigDecimal valorBigDecimal) {
 		return valorBigDecimal != null && valorBigDecimal.compareTo(BigDecimal.ZERO) > 0;
@@ -112,9 +112,9 @@ public final class ComparacaoUtil {
 	/**
 	 * Verifica se é um Integer nulo ou com valor zero. <br/>
 	 * Retorna true se o parâmetro for nulo ou zero.
+	 * @author Senio Caires
 	 * @param valorInteger - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isVazio(final Integer valorInteger) {
 		return valorInteger == null || valorInteger == 0;
@@ -123,9 +123,9 @@ public final class ComparacaoUtil {
 	/**
 	 * Verifica se é um Long nulo ou com valor zero. <br/>
 	 * Retorna true se o parâmetro for nulo ou zero.
+	 * @author Senio Caires
 	 * @param valorLong - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isVazio(final Long valorLong) {
 		return valorLong == null || valorLong == 0;
@@ -134,20 +134,20 @@ public final class ComparacaoUtil {
 	/**
 	 * Verifica se é um Double nulo ou com valor zero. <br/>
 	 * Retorna true se o parâmetro for nulo ou zero.
+	 * @author Senio Caires
 	 * @param valorDouble - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 */
 	public static boolean isVazio(final Double valorDouble) {
-		return valorDouble == null || Double.doubleToRawLongBits(valorDouble) == 0.0;
+		return valorDouble == null || Double.doubleToRawLongBits(valorDouble) == 0L;
 	}
 
 	/**
 	 * Verifica se é um BigDecimal nulo ou com valor zero. <br/>
 	 * Retorna true se o parâmetro for nulo ou zero.
+	 * @author Senio Caires
 	 * @param valorBigDecimal - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 * @see java.lang.Comparable#compareTo(Object)
 	 */
 	public static boolean isVazio(final BigDecimal valorBigDecimal) {
@@ -157,9 +157,9 @@ public final class ComparacaoUtil {
 	/**
 	 * Verifica se é uma String nula ou vazia. <br/>
 	 * Retorna true se o parâmetro for nulo, vazio (""), ou preenchido somente com espaços em branco (" ").
+	 * @author Senio Caires
 	 * @param valorString - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 * @see ConversaoUtil#nuloParaVazio(String)
 	 */
 	public static boolean isVazio(final String valorString) {
@@ -169,9 +169,9 @@ public final class ComparacaoUtil {
 	/**
 	 * Verifica se é um Character nulo ou vazio. <br/>
 	 * Retorna true se o parâmetro for nulo ou  (' ').
+	 * @author Senio Caires
 	 * @param valorCharacter - Valor
 	 * @return boolean
-	 * @author Senio Caires
 	 * @see ConversaoUtil#nuloParaVazio(Character)
 	 */
 	public static boolean isVazio(final Character valorCharacter) {
@@ -180,10 +180,9 @@ public final class ComparacaoUtil {
 
 	/**
 	 * Retorna true se for um CPF ou CNPJ válido.
-	 * @author SenioCaires
+	 * @author Senio Caires
 	 * @param cpfOuCnpj - CPF ou CNPJ
 	 * @return true se for um CPF ou CNPJ valido
-	 * @author Senio Caires
 	 */
 	public static boolean isCpfOuCnpjValido(final String cpfOuCnpj) {
 
